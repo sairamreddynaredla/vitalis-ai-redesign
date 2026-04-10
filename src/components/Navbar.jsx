@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/logo.jpeg";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -11,11 +10,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ SCROLL FUNCTION
+  // ✅ SCROLL FUNCTION (NEW)
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     section?.scrollIntoView({ behavior: "smooth" });
-    setMenuOpen(false);
+    setMenuOpen(false); // close mobile menu
   };
 
   return (
@@ -28,32 +27,16 @@ export default function Navbar() {
             : "bg-[#eaf2ff]/80 backdrop-blur-sm"
         }`}
       >
-        {/* ✅ NEW LOGO DESIGN */}
-        <div className="flex items-center gap-3 group cursor-pointer">
-          
-          {/* Icon */}
-          <div className="w-10 h-10 flex items-center justify-center 
-            rounded-xl bg-gradient-to-br from-blue-600 to-cyan-400 
-            shadow-md group-hover:scale-110 transition duration-300 overflow-hidden">
-
-            <img
-              src={logo}
-              alt="Vitalis AI"
-              className="w-full h-full object-cover rounded-xl"
-            />
-          </div>
-
-          {/* Text */}
-          <div className="leading-tight">
-            <h1 className="text-lg font-semibold tracking-wide text-gray-900 
-              group-hover:text-blue-600 transition duration-300">
+        {/* LOGO */}
+        <div className="flex items-center gap-2">
+          <div className="bg-white shadow-sm rounded-full px-3 py-1 flex items-center gap-2">
+            <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+              V
+            </div>
+            <span className="text-blue-600 font-semibold text-sm">
               Vitalis AI
-            </h1>
-            <p className="text-xs text-gray-500 -mt-1">
-              AI Health Assistant
-            </p>
+            </span>
           </div>
-
         </div>
 
         {/* DESKTOP NAV */}
@@ -82,7 +65,7 @@ export default function Navbar() {
 
         {/* MOBILE BUTTON */}
         <button
-          className="md:hidden text-gray-700 text-2xl"
+          className="md:hidden text-gray-700"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           ☰
@@ -92,24 +75,15 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       {menuOpen && (
         <div className="absolute top-20 w-[90%] bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4 md:hidden">
-          <span
-            onClick={() => scrollToSection("about")}
-            className="cursor-pointer hover:text-blue-600 transition"
-          >
+          <span onClick={() => scrollToSection("about")} className="cursor-pointer">
             About Us
           </span>
 
-          <span
-            onClick={() => scrollToSection("features")}
-            className="cursor-pointer hover:text-blue-600 transition"
-          >
+          <span onClick={() => scrollToSection("features")} className="cursor-pointer">
             Features
           </span>
 
-          <span
-            onClick={() => scrollToSection("how")}
-            className="cursor-pointer hover:text-blue-600 transition"
-          >
+          <span onClick={() => scrollToSection("how")} className="cursor-pointer">
             How It Works
           </span>
         </div>
