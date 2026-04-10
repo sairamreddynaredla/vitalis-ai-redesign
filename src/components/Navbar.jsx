@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/logo.png"; // ✅ logo import
+import logo from "../assets/logo.jpeg";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,13 +28,32 @@ export default function Navbar() {
             : "bg-[#eaf2ff]/80 backdrop-blur-sm"
         }`}
       >
-        {/* ✅ LOGO */}
-        <div className="flex items-center gap-2">
-          <img
-            src={logo}
-            alt="Vitalis AI"
-            className="h-10 w-auto object-contain"
-          />
+        {/* ✅ NEW LOGO DESIGN */}
+        <div className="flex items-center gap-3 group cursor-pointer">
+          
+          {/* Icon */}
+          <div className="w-10 h-10 flex items-center justify-center 
+            rounded-xl bg-gradient-to-br from-blue-600 to-cyan-400 
+            shadow-md group-hover:scale-110 transition duration-300 overflow-hidden">
+
+            <img
+              src={logo}
+              alt="Vitalis AI"
+              className="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          {/* Text */}
+          <div className="leading-tight">
+            <h1 className="text-lg font-semibold tracking-wide text-gray-900 
+              group-hover:text-blue-600 transition duration-300">
+              Vitalis AI
+            </h1>
+            <p className="text-xs text-gray-500 -mt-1">
+              AI Health Assistant
+            </p>
+          </div>
+
         </div>
 
         {/* DESKTOP NAV */}
@@ -75,21 +94,21 @@ export default function Navbar() {
         <div className="absolute top-20 w-[90%] bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4 md:hidden">
           <span
             onClick={() => scrollToSection("about")}
-            className="cursor-pointer"
+            className="cursor-pointer hover:text-blue-600 transition"
           >
             About Us
           </span>
 
           <span
             onClick={() => scrollToSection("features")}
-            className="cursor-pointer"
+            className="cursor-pointer hover:text-blue-600 transition"
           >
             Features
           </span>
 
           <span
             onClick={() => scrollToSection("how")}
-            className="cursor-pointer"
+            className="cursor-pointer hover:text-blue-600 transition"
           >
             How It Works
           </span>
