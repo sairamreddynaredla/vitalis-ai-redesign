@@ -15,7 +15,6 @@ export const footerData = {
     text: `Vitalis AI is an information and management platform and is not a substitute for professional healthcare providers or doctors. Always consult qualified medical professionals for personal medical advice, diagnosis, or treatment plans.`,
   },
 
-  // ✅ FIXED SOCIAL LINKS
   socialLinks: [
     {
       icon: "facebook",
@@ -42,14 +41,14 @@ export const footerData = {
   legalLinks: [
     {
       name: "Terms of Service",
-       url: "https://www.vitalisglobal.ai/terms-service",
+      url: "https://www.vitalisglobal.ai/terms-service",
     },
     {
       name: "Privacy Policy",
-       url: "https://www.vitalisglobal.ai/privacy-policy",
+      url: "https://www.vitalisglobal.ai/privacy-policy",
     },
   ],
 
   copyright:
-  "© 2026 Vitalis AI is a product owned and operated by Virtu Tech Solutions. All rights reserved.",
+    "© 2026 Vitalis AI is a product owned and operated by Virtu Tech Solutions. All rights reserved.",
 };
