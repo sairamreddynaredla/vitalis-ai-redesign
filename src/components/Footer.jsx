@@ -1,4 +1,4 @@
-import { footerData } from "../data/footerData";
+import footerData from "../data/footerdata";
 import { Mail } from "lucide-react";
 
 const iconMap = {
@@ -100,7 +100,6 @@ export default function Footer() {
         {/* BOTTOM */}
         <div className="text-center text-sm text-gray-400">
 
-          {/* ✅ UPDATED COPYRIGHT */}
           <p className="mb-4">
             © 2026 Vitalis AI is a product owned and operated by{" "}
             <a
@@ -114,7 +113,6 @@ export default function Footer() {
             . All rights reserved.
           </p>
 
-          {/* LEGAL LINKS */}
           <div className="flex justify-center gap-6 flex-wrap">
             {(footerData.legalLinks || []).map((link) => (
               <a
