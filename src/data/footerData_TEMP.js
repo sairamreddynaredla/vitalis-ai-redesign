@@ -1,4 +1,4 @@
-export const footerData = {
+const footerData = {
   brand: {
     name: "Vitalis AI",
     email: "Vitalis@virtutechsolutions.com",
@@ -52,3 +52,5 @@ export const footerData = {
   copyright:
     "© 2026 Vitalis AI is a product owned and operated by Virtu Tech Solutions. All rights reserved.",
 };
+
+export default footerData;

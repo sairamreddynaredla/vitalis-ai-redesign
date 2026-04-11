@@ -1,4 +1,4 @@
-import { footerData } from "../data/footerdata";
+import { footerData } from "../data/footerData";
 import { Mail } from "lucide-react";
 
 const iconMap = {
