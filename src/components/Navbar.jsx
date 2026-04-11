@@ -10,11 +10,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ SCROLL FUNCTION (NEW)
+  // ✅ SCROLL FUNCTION
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     section?.scrollIntoView({ behavior: "smooth" });
-    setMenuOpen(false); // close mobile menu
+    setMenuOpen(false);
   };
 
   return (
@@ -24,22 +24,42 @@ export default function Navbar() {
         ${
           scrolled
             ? "bg-white/90 shadow-lg backdrop-blur-md"
-            : "bg-[#eaf2ff]/80 backdrop-blur-sm"
+            : "bg-blue-50/80 backdrop-blur-sm"
         }`}
       >
-        {/* LOGO */}
-        <div className="flex items-center gap-2">
-          <div className="bg-white shadow-sm rounded-full px-3 py-1 flex items-center gap-2">
-            <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
-              V
-            </div>
-            <span className="text-blue-600 font-semibold text-sm">
+        {/* ✅ PREMIUM LOGO */}
+        <div className="flex items-center gap-2 cursor-pointer group">
+          {/* Logo Icon */}
+          <img
+            src="/logo.png"
+            alt="Vitalis AI Logo"
+            className="w-9 h-9 object-contain transition-all duration-300 
+            group-hover:scale-110 group-hover:rotate-6"
+          />
+
+          {/* Logo Text */}
+          <h1
+            className="relative text-lg font-semibold overflow-hidden 
+            group-hover:drop-shadow-[0_0_10px_rgba(99,102,241,0.6)]"
+          >
+            <span
+              className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 
+              bg-clip-text text-transparent transition-all duration-500 
+              group-hover:from-purple-500 group-hover:to-blue-500"
+            >
               Vitalis AI
             </span>
-          </div>
+
+            {/* Shine Animation */}
+            <span
+              className="absolute top-0 left-[-120%] w-full h-full 
+              bg-gradient-to-r from-transparent via-white/40 to-transparent 
+              skew-x-12 group-hover:left-[120%] transition-all duration-700"
+            ></span>
+          </h1>
         </div>
 
-        {/* DESKTOP NAV */}
+        {/* ✅ DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
           <span
             onClick={() => scrollToSection("about")}
@@ -63,27 +83,36 @@ export default function Navbar() {
           </span>
         </div>
 
-        {/* MOBILE BUTTON */}
+        {/* ✅ MOBILE BUTTON */}
         <button
-          className="md:hidden text-gray-700"
+          className="md:hidden text-gray-700 text-xl"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           ☰
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* ✅ MOBILE MENU */}
       {menuOpen && (
         <div className="absolute top-20 w-[90%] bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4 md:hidden">
-          <span onClick={() => scrollToSection("about")} className="cursor-pointer">
+          <span
+            onClick={() => scrollToSection("about")}
+            className="cursor-pointer hover:text-blue-600"
+          >
             About Us
           </span>
 
-          <span onClick={() => scrollToSection("features")} className="cursor-pointer">
+          <span
+            onClick={() => scrollToSection("features")}
+            className="cursor-pointer hover:text-blue-600"
+          >
             Features
           </span>
 
-          <span onClick={() => scrollToSection("how")} className="cursor-pointer">
+          <span
+            onClick={() => scrollToSection("how")}
+            className="cursor-pointer hover:text-blue-600"
+          >
             How It Works
           </span>
         </div>
