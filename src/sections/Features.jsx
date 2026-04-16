@@ -1,134 +1,149 @@
-import { Activity, BarChart3, Calendar, Clock, FileText, ScanLine } from "lucide-react";
-import Section from "../components/ui/Section";
-import Wrapper from "../components/ui/Wrapper";
+import {
+  CheckCircle,
+  ShoppingCart,
+  AlertTriangle,
+  Utensils,
+  Clock,
+  Bell,
+} from "lucide-react";
 
-const FEATURES = [
-  {
-    icon: Activity,
-    title: "AI Nutrition Analysis",
-    desc: "Upload a photo or report and our AI instantly identifies nutrients, vitamins, minerals, and health scores with 98.4% accuracy.",
-    tag: "Core AI",
-    color: "#3B82F6",
-  },
-  {
-    icon: Calendar,
-    title: "Smart Meal Planner",
-    desc: "AI-generated weekly meal plans tailored to your goals, dietary restrictions, and taste preferences.",
-    tag: "New",
-    color: "#8B5CF6",
-  },
-  {
-    icon: ScanLine,
-    title: "Grocery Scanner",
-    desc: "Scan any barcode or food package. Get instant nutritional breakdown and smarter alternatives.",
-    tag: "New",
-    color: "#34D399",
-  },
-  {
-    icon: Clock,
-    title: "Expiry Tracker",
-    desc: "AI reads expiry dates and alerts you before food goes bad — reducing waste and protecting your health.",
-    tag: "New",
-    color: "#F59E0B",
-  },
-  {
-    icon: BarChart3,
-    title: "Health Dashboard",
-    desc: "Track macros, hydration, sleep, and trends with predictive AI insights and weekly summaries.",
-    tag: "Core AI",
-    color: "#EC4899",
-  },
-  {
-    icon: FileText,
-    title: "Lab Report Analyzer",
-    desc: "Upload reports and get simple AI explanations with actionable steps in plain language.",
-    tag: "Core AI",
-    color: "#3B82F6",
-  },
-];
+import foodImg from "../assets/food.jpg";
+import medicalImg from "../assets/medical.jpg";
 
-export default function Features() {
+export default function FeatureSection() {
   return (
-   <Section id="features" className="relative py-16 md:py-20 scroll-mt-32" bg="transparent">
+    <section id="features" className="scroll-mt-24 px-6 py-20 bg-gradient-to-b from-[#eef3ea] to-[#f7f5f2]">
+      {/* ===================== HEADER ===================== */}
+      <div className="max-w-3xl mx-auto mb-16 text-center">
+        
+        {/* Section Badge */}
+        <div className="inline-block px-5 py-1.5 mb-4 text-sm font-semibold text-green-600 bg-green-100 rounded-full">
+          Features
+        </div>
 
-      {/* Background */}
-      <div className="absolute inset-0 opacity-30 pointer-events-none grid-bg" />
+        {/* Section Title */}
+        <h2 className="text-4xl md:text-5xl font-semibold text-gray-800">
+          Everything you need to manage your health
+        </h2>
 
-      <Wrapper>
+        {/* Section Description */}
+        <p className="mt-4 text-gray-500">
+          Scan food, plan meals, track habits, and understand your body — all powered by AI.
+        </p>
+      </div>
 
-        {/* TOP */}
-        <div className="reveal mb-10 md:mb-12">
-          <div className="section-label mb-3">Core Features</div>
+      {/* ===================== FEATURE HIGHLIGHT (FOOD SCANNER) ===================== */}
+      <div className="max-w-6xl mx-auto mb-20 grid items-center gap-10 p-8 md:p-12 bg-white rounded-3xl shadow-md md:grid-cols-2">
+        
+        {/* Content */}
+        <div>
+          <h3 className="mb-4 text-3xl font-semibold text-gray-800">
+            Snap your meal. <br /> Know everything.
+          </h3>
 
-          <h2 className="font-head text-3xl md:text-4xl text-[var(--text)] mb-3">
-            Everything your health
-            <br />
-            needs in <span className="grad-text">one place.</span>
-          </h2>
+          <p className="mb-6 text-gray-500">
+            Take a photo of your food and instantly get calories, protein, carbs,
+            and nutrition insights — no typing needed.
+          </p>
 
-          <p className="text-[var(--muted)] max-w-lg leading-relaxed">
-            From AI-powered nutrition analysis to smart grocery scanning — Vitalis covers every part of your wellness journey.
+          {/* Feature List */}
+          <ul className="space-y-3">
+            {[
+              "Instant calorie detection",
+              "Portion size estimation",
+              "Smart nutrition insights",
+            ].map((item, index) => (
+              <li
+                key={index}
+                className="flex items-center gap-2 text-gray-700"
+              >
+                <CheckCircle className="w-5 h-5 text-green-500" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Image */}
+        <div className="flex justify-center">
+          <img
+            src={foodImg}
+            alt="Food Scanner"
+            className="w-[280px] md:w-[320px] rounded-2xl shadow-lg"
+          />
+        </div>
+      </div>
+
+      {/* ===================== FEATURE GRID ===================== */}
+      <div className="max-w-6xl mx-auto mb-20 grid gap-6 md:grid-cols-3">
+        {[
+          {
+            title: "Meal Planner",
+            icon: <Utensils className="text-green-600" />,
+          },
+          {
+            title: "Grocery Scanner",
+            icon: <ShoppingCart className="text-green-600" />,
+          },
+          {
+            title: "Food Risk Scanner",
+            icon: <AlertTriangle className="text-yellow-500" />,
+          },
+          {
+            title: "AI Menu Analyzer",
+            icon: <Utensils className="text-green-600" />,
+          },
+          {
+            title: "Intermittent Fasting",
+            icon: <Clock className="text-green-600" />,
+          },
+          {
+            title: "Smart Reminders",
+            icon: <Bell className="text-green-600" />,
+          },
+        ].map((feature, index) => (
+          <div
+            key={index}
+            className="p-6 transition bg-white rounded-2xl shadow-sm hover:shadow-md"
+          >
+            <div className="mb-3">{feature.icon}</div>
+
+            <h4 className="mb-1 text-lg font-semibold text-gray-800">
+              {feature.title}
+            </h4>
+
+            <p className="text-sm text-gray-500">
+              AI-powered feature to improve your health tracking experience.
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* ===================== MEDICAL ANALYZER ===================== */}
+      <div className="max-w-6xl mx-auto grid items-center gap-10 p-8 md:p-12 bg-white rounded-3xl shadow-md md:grid-cols-2">
+        
+        {/* Content */}
+        <div>
+          <h3 className="mb-4 text-3xl font-semibold text-gray-800">
+            Medical Analyzer
+          </h3>
+
+          <p className="text-gray-500">
+            Scan doctor prescriptions and get simple explanations in your language.
+            No confusion. Just clarity.
           </p>
         </div>
 
-        {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-          {FEATURES.map((feat, i) => {
-            const Icon = feat.icon;
-
-            return (
-              <div
-                key={i}
-                className="reveal p-6 rounded-2xl bg-white/5 border border-white/10 relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-                style={{ "--delay": `${i * 80}ms` }}
-              >
-
-                {/* TOP GRADIENT LINE */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px]"
-                  style={{
-                    background: `linear-gradient(90deg, transparent, ${feat.color}, transparent)`
-                  }}
-                />
-
-                {/* ICON */}
-                <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-                  style={{
-                    background: `${feat.color}15`,
-                    border: `1px solid ${feat.color}30`
-                  }}
-                >
-                  <Icon size={20} color={feat.color} />
-                </div>
-
-                {/* TITLE */}
-                <h3 className="font-head text-lg text-[var(--text)] mb-2">
-                  {feat.title}
-                </h3>
-
-                {/* DESC */}
-                <p className="text-sm text-[var(--muted)] leading-relaxed mb-4">
-                  {feat.desc}
-                </p>
-
-                {/* TAG */}
-                <span
-                  className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wide rounded-full"
-                  style={{
-                    color: feat.color,
-                    background: `${feat.color}15`,
-                    border: `1px solid ${feat.color}30`
-                  }}
-                >
-                  {feat.tag}
-                </span>
-              </div>
-            );
-          })}
+        {/* Image */}
+        <div className="flex justify-center">
+          <img
+            src={medicalImg}
+            alt="Medical Analyzer"
+            className="w-[280px] md:w-[320px] rounded-2xl shadow-lg"
+          />
         </div>
+      </div>
 
-      </Wrapper>
-    </Section>
+    </section>
   );
 }

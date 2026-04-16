@@ -1,99 +1,134 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { Eye, EyeOff } from "lucide-react";
 
-const faqs = [
-  {
-    q: "What is Vitalis AI?",
-    a: "Vitalis AI is a comprehensive AI-powered healthcare platform offering nutrition analysis, medical report insights, smart meal planning, grocery scanning, and health management — all in one place.",
-  },
-  {
-    q: "What services does Vitalis AI offer?",
-    a: "It provides AI report analysis, medication reminders, health tracking, grocery scanning, expiry tracking, meal planning, fasting plans, and the MediBuddy AI assistant.",
-  },
-  {
-    q: "How do reminders work?",
-    a: "Smart reminders notify users about medications and appointments automatically, adapting to your schedule and preferences with intelligent timing.",
-  },
-  {
-    q: "How secure is my data?",
-    a: "Your data is protected using enterprise-grade AES-256 encryption, HIPAA-compliant infrastructure, and zero-knowledge architecture. We never sell your data.",
-  },
-  {
-    q: "Is Vitalis AI a replacement for my doctor?",
-    a: "No. Vitalis AI is an information and management platform. It helps you understand and manage your health data, but always consult qualified medical professionals for personal medical advice.",
-  },
-  {
-    q: "What platforms is Vitalis AI available on?",
-    a: "Vitalis AI is available on iOS, Android, and as a web platform — fully synced across all your devices.",
-  },
-];
-
+/**
+ * FAQ section component
+ * Handles accordion-style expand/collapse for questions
+ */
 export default function FAQ() {
-  const [active, setActive] = useState(null);
+  // Tracks currently opened FAQ index
+  const [openIndex, setOpenIndex] = useState(null);
+
+  // Stores dynamic height references for smooth animation
+  const contentRefs = useRef([]);
+
+  /**
+   * FAQ data
+   * Keeping content separate improves maintainability
+   */
+  const faqs = [
+    {
+      question: "What is Vitalis AI?",
+      answer:
+        "Vitalis AI is an AI-powered health assistant helping you make smarter food and lifestyle decisions.",
+    },
+    {
+      question: "What services does Vitalis AI offer?",
+      answer:
+        "AI fasting tracking, calorie tracking, hydration reminders, and personalized health insights.",
+    },
+    {
+      question: "How do intelligent reminders work?",
+      answer:
+        "They adapt to your routine and guide you based on fasting cycles and hydration needs.",
+    },
+    {
+      question: "How secure is my health data?",
+      answer:
+        "Your data is encrypted and protected with high-level security standards.",
+    },
+    {
+      question: "Can I track calories automatically?",
+      answer:
+        "Yes, using AI food recognition or manual tracking for accuracy.",
+    },
+  ];
+
+  /**
+   * Toggle FAQ open/close
+   * Ensures only one item is expanded at a time
+   */
+  const toggleFAQ = (index) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
 
   return (
-    <section className="py-24 px-4 md:px-8 bg-[var(--bg)]">
-      <div className="max-w-3xl mx-auto">
+    // Section wrapper with vertical centering
+    <section className="h-screen flex flex-col justify-center px-6 bg-gradient-to-b from-[#f6fbf8] to-[#eef7f3]">
+      
+      {/* Header */}
+      <div className="text-center max-w-3xl mx-auto mb-8">
 
-        {/* HEADER */}
-        <div className="text-center mb-14 reveal">
-          <div className="section-label justify-center mb-3">FAQ</div>
-
-          <h2 className="font-head text-3xl md:text-4xl text-[var(--text)] mb-3">
-            Frequently Asked <span className="grad-text">Questions</span>
-          </h2>
-
-          <p className="text-[var(--muted)] leading-relaxed">
-            Everything you need to know about Vitalis AI.
-          </p>
+        {/* Label */}
+        <div className="inline-block px-3 py-1 text-xs rounded-full bg-green-100 text-green-700 mb-3">
+          FAQ
         </div>
 
-        {/* FAQ LIST */}
-        <div className="flex flex-col gap-3">
-          {faqs.map((item, i) => {
-            const isActive = active === i;
+        {/* Title */}
+        <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 leading-tight whitespace-nowrap">
+          Smarter Health Starts{" "}
+          <span className="bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent">
+            Here
+          </span>
+        </h2>
 
-            return (
-              <div key={i} className="reveal" style={{ "--delay": `${i * 50}ms` }}>
-                <div
-                  onClick={() => setActive(isActive ? null : i)}
-                  className={`rounded-xl p-5 cursor-pointer transition-all duration-300 border ${
-                    isActive
-                      ? "bg-blue-500/5 border-blue-500/30"
-                      : "bg-white/5 border-[var(--border)] hover:border-white/20"
-                  }`}
-                >
+        {/* Subtitle */}
+        <p className="text-gray-500 mt-2 text-xs md:text-sm">
+          Explore how Vitalis AI helps you make better health decisions.
+        </p>
+      </div>
 
-                  {/* QUESTION */}
-                  <div className="flex justify-between items-center gap-4">
-                    <h4 className="font-head text-sm text-[var(--text)] leading-snug">
-                      {item.q}
-                    </h4>
+      {/* FAQ List */}
+      <div className="max-w-4xl mx-auto w-full space-y-3">
+        {faqs.map((faq, index) => {
+          const isOpen = openIndex === index;
 
-                    {/* ICON */}
-                    <div
-                      className={`w-7 h-7 flex items-center justify-center rounded-full text-sm transition-all duration-300 ${
-                        isActive
-                          ? "bg-blue-500/20 text-blue-500 rotate-45"
-                          : "bg-white/10 text-[var(--muted)]"
-                      }`}
-                    >
-                      +
-                    </div>
-                  </div>
+          return (
+            <div
+              key={index}
+              onClick={() => toggleFAQ(index)}
+              className={`group cursor-pointer rounded-xl px-5 py-4 transition-all duration-300
+              ${
+                isOpen
+                  ? "bg-white shadow-md"
+                  : "bg-white/70 hover:bg-white shadow-sm"
+              }`}
+            >
+              {/* Question Row */}
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm md:text-base font-medium text-gray-800">
+                  {faq.question}
+                </h3>
 
-                  {/* ANSWER */}
-                  {isActive && (
-                    <p className="text-sm text-[var(--muted)] mt-4 pt-4 border-t border-[var(--border)] leading-relaxed">
-                      {item.a}
-                    </p>
+                {/* Toggle Icon */}
+                <div className="text-green-600">
+                  {isOpen ? (
+                    <EyeOff className="w-5 h-5" />
+                  ) : (
+                    <Eye className="w-5 h-5" />
                   )}
                 </div>
               </div>
-            );
-          })}
-        </div>
 
+              {/* Answer (Animated Height) */}
+              <div
+                ref={(el) => (contentRefs.current[index] = el)}
+                style={{
+                  height: isOpen
+                    ? `${contentRefs.current[index]?.scrollHeight}px`
+                    : "0px",
+                }}
+                className="overflow-hidden transition-all duration-300"
+              >
+                <p className="text-gray-600 text-xs mt-2">
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
+          );
+        })}
       </div>
+
     </section>
   );
 }
