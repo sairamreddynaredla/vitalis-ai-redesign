@@ -1,52 +1,94 @@
-import React from "react";
-import trustImage from "../assets/trust-image.webp";
+import { ShieldCheck, CheckCircle, Activity, Lock } from "lucide-react";
 
-export default function TrustVisualSection() {
+import Section from "../components/ui/Section";
+import Wrapper from "../components/ui/Wrapper";
+
+const trustPoints = [
+  {
+    icon: ShieldCheck,
+    title: "Built with Verified Data",
+    desc: "Our AI is trained using reliable medical and nutrition datasets to ensure accurate insights.",
+  },
+  {
+    icon: Activity,
+    title: "Continuous Accuracy Monitoring",
+    desc: "We constantly improve and validate results to maintain consistency and reliability.",
+  },
+  {
+    icon: Lock,
+    title: "Privacy First Approach",
+    desc: "Your health data is never shared and always protected with strict security measures.",
+  },
+  {
+    icon: CheckCircle,
+    title: "Transparent AI Insights",
+    desc: "We focus on clarity — helping you understand your health, not confuse you.",
+  },
+];
+
+export default function TrustSection() {
   return (
-    <section className="relative overflow-hidden py-24 px-4 md:px-8 bg-gradient-to-b from-[#f8fbff] to-white">
+    <Section bg="transparent">
+      <Wrapper>
 
-      {/* BACKGROUND GLOW */}
-      <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(37,99,235,0.08),transparent_70%)] blur-[60px] z-0" />
-
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10">
-
-        {/* LEFT TEXT */}
-        <div>
-          <div className="inline-block bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-xs mb-5 font-semibold tracking-wider">
+        {/* HEADER */}
+        <div className="text-center mb-16">
+          <div className="inline-block px-4 py-1.5 text-xs rounded-full bg-green-500/10 text-green-600 mb-4 font-semibold tracking-wider">
             TRUST & RELIABILITY
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 leading-tight mb-5">
-            At Vitalis AI,<br />
-            <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
-              trust is foundational.
-            </span>
+          <h2 className="text-3xl md:text-4xl font-semibold text-black mb-4">
+            Built for reliability,
+            <br />
+            designed for your health.
           </h2>
 
-          <p className="text-slate-600 mb-3 leading-relaxed text-base">
-            We know healthcare providers depend on us to manage sensitive data.
-          </p>
-
-          <p className="text-slate-500 leading-relaxed text-base">
-            Our platform is secure, compliant, and reliable — ensuring innovation
-            without compromising patient safety.
+          <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            As a newly launched platform, our focus is not on numbers — 
+            but on delivering accurate, safe, and transparent health insights you can trust.
           </p>
         </div>
 
-        {/* RIGHT IMAGE */}
-        <div className="relative flex justify-center">
-          
-          {/* GLOW */}
-          <div className="absolute w-[130%] h-[130%] bg-[radial-gradient(circle,rgba(14,165,233,0.2),transparent_70%)] blur-[60px] z-0" />
+        {/* TRUST CARDS */}
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-5 sm:gap-6 md:gap-8">
 
-          <img
-            src={trustImage}
-            alt="Vitalis AI Trust System"
-            className="relative z-10 w-full max-w-xl rounded-3xl shadow-[0_30px_80px_rgba(0,0,0,0.12),0_10px_30px_rgba(37,99,235,0.15)] translate-y-2"
-          />
+          {trustPoints.map((item, i) => {
+            const Icon = item.icon;
+
+            return (
+              <div
+                key={i}
+                className="p-6 rounded-2xl bg-white border border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                {/* ICON */}
+                <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center mb-4">
+                  <Icon size={22} className="text-green-600" />
+                </div>
+
+                {/* TITLE */}
+                <h3 className="text-md font-semibold text-gray-900 mb-2">
+                  {item.title}
+                </h3>
+
+                {/* DESC */}
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            );
+          })}
+
         </div>
 
-      </div>
-    </section>
+        {/* BOTTOM NOTE */}
+        <div className="mt-16 text-center">
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-50 text-green-700 text-sm font-medium border border-green-100">
+            <ShieldCheck size={18} />
+            We’re committed to building trust through accuracy, not assumptions
+          </div>
+        </div>
+
+      </Wrapper>
+    </Section>
   );
 }

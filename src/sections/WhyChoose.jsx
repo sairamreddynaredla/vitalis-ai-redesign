@@ -46,7 +46,7 @@ export default function WhyChooseUs() {
         </p>
 
         {/* Feature Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6">
           {features.map((item, index) => (
             <motion.div
               key={index}

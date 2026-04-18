@@ -4,21 +4,20 @@ import { FaXTwitter } from "react-icons/fa6";
 export default function Footer() {
   return (
     // Footer wrapper
-    <footer className="bg-gray-50 mt-20 px-6 py-12">
+    <footer className="bg-gray-50 mt-16 md:mt-20 px-4 sm:px-6 md:px-10 py-10 md:py-12">
       
       {/* Top Grid Section */}
-      <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
-
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
         {/* Brand + Description */}
         <div>
-          <h2 className="text-xl font-bold text-gray-900">Vitalis AI</h2>
+          <h2 className="text-lg sm:text-xl font-bold text-gray-900">Vitalis AI</h2>
 
-          <p className="text-gray-500 mt-2">
+          <p className="text-sm sm:text-base text-gray-500 mt-2">
             Smart health tracking powered by AI.
           </p>
 
           {/* Social Media Links */}
-          <div className="flex gap-4 mt-4 text-gray-600">
+          <div className="flex flex-wrap gap-3 sm:gap-4 mt-4 text-gray-600">
 
             {/* Instagram */}
             <a
@@ -65,9 +64,9 @@ export default function Footer() {
 
         {/* Product Links */}
         <div>
-          <h3 className="font-semibold mb-3 text-gray-900">Product</h3>
+          <h3 className="font-semibold mb-3 text-gray-900 text-sm sm:text-base">Product</h3>
 
-          <ul className="space-y-2 text-gray-500">
+          <ul className="space-y-2 text-sm sm:text-base text-gray-500">
             <li>
               <a href="#features" className="hover:text-gray-800">
                 Features
@@ -93,9 +92,9 @@ export default function Footer() {
 
         {/* Company Links */}
         <div>
-          <h3 className="font-semibold mb-3 text-gray-900">Company</h3>
+          <h3 className="font-semibold mb-3 text-gray-900 text-sm sm:text-base">Company</h3>
 
-          <ul className="space-y-2 text-gray-500">
+          <ul className="space-y-2 text-sm sm:text-base text-gray-500">
             <li>
               <a href="#about" className="hover:text-gray-800">
                 About
@@ -121,9 +120,9 @@ export default function Footer() {
 
         {/* Support Links */}
         <div>
-          <h3 className="font-semibold mb-3 text-gray-900">Support</h3>
+          <h3 className="font-semibold mb-3 text-gray-900 text-sm sm:text-base">Support</h3>
 
-          <ul className="space-y-2 text-gray-500">
+          <ul className="space-y-2 text-sm sm:text-base text-gray-500">
             <li>
               <a
                 href="https://www.vitalisglobal.ai/privacy-policy"
@@ -150,10 +149,10 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="max-w-7xl mx-auto mt-10 border-t pt-6 flex flex-col md:flex-row justify-center items-center text-sm text-gray-400">
+      <div className="max-w-7xl mx-auto mt-8 md:mt-10 border-t pt-5 md:pt-6 flex flex-col items-center text-xs sm:text-sm text-gray-400">
 
         {/* Copyright */}
-        <p className="text-center">
+        <p className="text-center leading-relaxed px-2">
           © {new Date().getFullYear()} Vitalis AI is a product owned and operated by{" "}
           <a
             href="https://www.virtutechsolutions.com/"

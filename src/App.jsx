@@ -17,12 +17,25 @@ import SecuritySection from './sections/SecuritySection'
 import TrustVisualSection from './sections/TrustVisualSection'
 import WhyChoose from './sections/WhyChoose'
 import Workflow from './sections/Workflow'
-
-// ✅ Stats Section
 import StatsStrip from './sections/StatsStrip'
 
 function AppInner() {
   useReveal()
+
+  // 🔥 All sections in order
+  const sections = [
+    Hero,
+    StatsStrip,
+    About,
+    Features,
+    Workflow,
+    WhyChoose,
+    HowItWorks,
+    TrustVisualSection,
+    SecuritySection,
+    FAQ,
+    CTA,
+  ]
 
   return (
     <div className="bg-background min-h-screen overflow-x-hidden">
@@ -30,37 +43,14 @@ function AppInner() {
       <Navbar />
 
       <main className="flex flex-col">
+        {sections.map((Section, index) => (
+          <div key={index}>
+            <Section />
 
-        <Hero />
-
-        <StatsStrip />
-
-        <About />
-        <Divider />
-
-        <Features />
-        <Divider />
-
-        <Workflow />
-        <Divider />
-
-        <WhyChoose />
-        <Divider />
-
-        <HowItWorks />
-        <Divider />
-
-        <TrustVisualSection />
-        <Divider />
-
-        <SecuritySection />
-        <Divider />
-
-        <FAQ />
-        <Divider />
-
-        <CTA />
-
+            {/* 👉 Divider only between sections */}
+            {index !== sections.length - 1 && <Divider />}
+          </div>
+        ))}
       </main>
 
       <Footer />

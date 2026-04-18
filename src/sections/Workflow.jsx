@@ -1,127 +1,143 @@
-import Wrapper from "../components/ui/Wrapper";
-import Section from "../components/ui/Section";
-import { Brain, FileText, Users, User, ClipboardList } from "lucide-react";
+import scanImg from "../assets/workflow-sec-scan.jpg";
+import insightsImg from "../assets/workflow-sec-insights.jpg";
 
-import workflowImg from "../assets/workflow.webp"; // ✅ FIXED
-
-const WORKFLOW_FEATURES = [
-  {
-    icon: Brain,
-    title: "MEDIBUDDY AI ASSISTANT",
-    desc: "Get answers to your questions, including patient updates, appointments, and profile details.",
-    color: "#3B82F6",
-  },
-  {
-    icon: FileText,
-    title: "CONSULTATION TRANSCRIPTS",
-    desc: "Record consultations, generates transcripts, and export them as PDFs for clinical documentation.",
-    color: "#8B5CF6",
-  },
-  {
-    icon: Users,
-    title: "ACTIVE PATIENT MANAGEMENT",
-    desc: "Doctors can check active patients, confirm consultations, and manage cases efficiently.",
-    color: "#34D399",
-  },
-  {
-    icon: User,
-    title: "PROFILE MANAGEMENT",
-    desc: "Edit clinic name, contact email, age specialization, and related profile settings anytime.",
-    color: "#F59E0B",
-  },
-];
-
-export default function Workflow() {
+export default function WorkflowSection() {
   return (
-    <Section id="workflow" bg="transparent">
-      <Wrapper>
+    <section className="relative overflow-hidden bg-[#f3f5ef] py-24 px-6">
 
-        {/* TOP */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+      {/* 🔥 TOP WAVE */}
+      <div className="absolute top-0 left-0 w-full h-[220px] bg-[#dfe8d5] rounded-b-[50%]" />
 
-          {/* IMAGE */}
-          <div className="reveal">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-[70px] rounded-3xl" />
+      {/* 🔥 BOTTOM WAVE */}
+      <div className="absolute bottom-0 left-0 w-full h-[260px] bg-[#dfe8d5] rounded-t-[50%]" />
 
-              <img
-                src={workflowImg}
-                alt="Workflow"
-                className="relative z-10 w-full rounded-3xl shadow-2xl"
-                loading="lazy"
-              />
-            </div>
+      {/* 🔥 HEADER */}
+      <div className="relative text-center max-w-3xl mx-auto mb-20">
+        <h2 className="text-3xl md:text-4xl font-semibold text-[#2f3e2f]">
+          How Vitalis Workflow Works
+        </h2>
+        <p className="mt-3 text-[#5c6b5c] text-lg">
+          Your Journey to Healthier Habits
+        </p>
+      </div>
+
+      {/* 🔥 FLOW CONTAINER */}
+      <div className="relative max-w-6xl mx-auto flex flex-col gap-10 md:block">
+
+        {/* STEP 1 */}
+        <div className="relative md:absolute md:left-0 md:top-0 
+                        bg-white p-5 rounded-2xl shadow-lg 
+                        w-full max-w-[260px] mx-auto">
+
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 
+                          md:left-3 md:translate-x-0 
+                          bg-[#9fb37a] text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">
+            1
           </div>
 
-          {/* TEXT */}
-          <div className="reveal space-y-6" style={{ "--delay": "150ms" }}>
-            <h2 className="font-head text-3xl md:text-4xl text-[var(--text)]">
-              Clinical intelligence designed
-              <br />
-              to simplify doctor's workflows
-            </h2>
+          <img
+            src={scanImg}
+            alt="scan"
+            className="rounded-xl mb-3 object-cover h-[140px] w-full"
+          />
 
-            {/* HIGHLIGHT */}
-            <div className="p-5 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/10 border border-white/10 backdrop-blur">
-              <div className="flex items-center gap-2 mb-2">
-                <ClipboardList size={18} />
-                <span className="font-semibold">
-                  Clinical Documentation
-                </span>
-              </div>
+          <h3 className="font-semibold text-[#2f3e2f]">
+            1. Capture Your Plate
+          </h3>
+          <p className="text-sm text-[#5c6b5c] mt-1">
+            Snap a photo of your meal using our app.
+          </p>
+        </div>
 
-              <p className="text-sm text-[var(--muted)] leading-relaxed">
-                Automatically capture and structure medical data during consultations,
-                including patient history, vitals, assessments, and treatment plans in real-time.
-              </p>
-            </div>
+        {/* STEP 2 */}
+        <div className="relative w-full max-w-[260px] mx-auto
+                        md:absolute md:left-1/2 md:-translate-x-1/2 md:top-20
+                        bg-white p-5 rounded-2xl shadow-lg">
+
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 
+                          md:left-3 md:translate-x-0 
+                          bg-[#9fb37a] text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">
+            2
           </div>
 
+          <div className="h-[140px] flex items-center justify-center bg-gray-100 rounded-xl mb-3">
+            <span className="text-sm text-gray-500">
+              We’re processing your dish
+            </span>
+          </div>
+
+          <h3 className="font-semibold text-[#2f3e2f]">
+            2. Instant Analysis
+          </h3>
+          <p className="text-sm text-[#5c6b5c] mt-1">
+            Get nutritional analysis in seconds.
+          </p>
         </div>
 
-        {/* CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {WORKFLOW_FEATURES.map((item, i) => {
-            const Icon = item.icon;
+        {/* STEP 3 */}
+        <div className="relative md:absolute md:right-0 md:top-40 
+                        bg-white p-5 rounded-2xl shadow-lg 
+                        w-full max-w-[260px] mx-auto">
 
-            return (
-              <div
-                key={item.title} // ✅ FIXED (no index)
-                className="reveal relative p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-                style={{ "--delay": `${i * 100}ms` }}
-              >
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 
+                          md:left-3 md:translate-x-0 
+                          bg-[#9fb37a] text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">
+            3
+          </div>
 
-                {/* STEP */}
-                <div className="absolute top-4 right-4 text-xs text-white/20 font-bold">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
+          <img
+            src={insightsImg}
+            alt="insights"
+            className="rounded-xl mb-3 object-cover h-[140px] w-full"
+          />
 
-                {/* ICON */}
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                  style={{
-                    background: `${item.color}15`,
-                    border: `1px solid ${item.color}30`,
-                  }}
-                >
-                  <Icon size={22} color={item.color} />
-                </div>
-
-                {/* TITLE */}
-                <h4 className="text-sm font-semibold mb-2 text-[var(--text)]">
-                  {item.title}
-                </h4>
-
-                {/* DESC */}
-                <p className="text-xs text-[var(--muted)] leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            );
-          })}
+          <h3 className="font-semibold text-[#2f3e2f]">
+            3. View Detailed Insights
+          </h3>
+          <p className="text-sm text-[#5c6b5c] mt-1">
+            See your meal’s macros, nutrition tips, and suggestions.
+          </p>
         </div>
 
-      </Wrapper>
-    </Section>
+        {/* 🔥 SVG CURVED ARROWS (desktop only) */}
+        <svg
+          className="hidden md:block absolute top-0 left-0 w-full h-full pointer-events-none"
+          viewBox="0 0 1000 400"
+        >
+          <path
+            d="M200 120 C350 50, 450 150, 500 130"
+            stroke="#9fb37a"
+            strokeWidth="2"
+            fill="none"
+            markerEnd="url(#arrow)"
+          />
+
+          <path
+            d="M520 180 C700 250, 780 180, 820 200"
+            stroke="#9fb37a"
+            strokeWidth="2"
+            fill="none"
+            markerEnd="url(#arrow)"
+          />
+
+          <defs>
+            <marker
+              id="arrow"
+              markerWidth="6"
+              markerHeight="6"
+              refX="5"
+              refY="3"
+              orient="auto"
+            >
+              <path d="M0,0 L6,3 L0,6 Z" fill="#9fb37a" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+
+    
+      <div className="hidden md:block h-[420px]" />
+
+    </section>
   );
 }

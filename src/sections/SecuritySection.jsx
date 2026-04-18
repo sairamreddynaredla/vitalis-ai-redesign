@@ -4,6 +4,7 @@ import {
   Server,
   Shield,
   Users,
+  Eye,
 } from "lucide-react";
 
 import Section from "../components/ui/Section";
@@ -13,68 +14,32 @@ const securityData = [
   {
     title: "Data Encryption",
     icon: Lock,
-    items: [
-      "AES-256 encryption",
-      "TLS 1.3 secure transfer",
-      "Zero-knowledge architecture",
-      "Encrypted backups",
-    ],
-    color: "#3B82F6",
+    desc: "AES-256 encryption, TLS 1.3 secure transfer and encrypted backups.",
   },
   {
     title: "Compliance Monitoring",
     icon: Shield,
-    items: [
-      "Automated compliance checks",
-      "Third-party audits",
-      "Vulnerability assessments",
-      "Risk management protocols",
-    ],
-    color: "#8B5CF6",
+    desc: "Automated checks, third-party audits and risk management protocols.",
   },
   {
     title: "Access Control",
     icon: Users,
-    items: [
-      "Multi-factor authentication",
-      "Role-based access control",
-      "Session management",
-      "Audit logging",
-    ],
-    color: "#34D399",
+    desc: "Multi-factor authentication, role-based access and audit logs.",
   },
   {
     title: "Data Governance",
     icon: Database,
-    items: [
-      "General Data Protection Regulation",
-      "Retention policies",
-      "Right to deletion",
-      "Data portability",
-    ],
-    color: "#F59E0B",
+    desc: "GDPR compliance, retention policies and data portability.",
   },
   {
     title: "Infrastructure Security",
     icon: Server,
-    items: [
-      "SOC 2 certified hosting",
-      "24/7 security monitoring",
-      "Intrusion detection",
-      "Regular penetration testing",
-    ],
-    color: "#EC4899",
+    desc: "Secure cloud hosting with continuous monitoring and threat detection.",
   },
   {
-    title: "Staff Training",
-    icon: Shield,
-    items: [
-      "HIPAA training certification",
-      "Security awareness programs",
-      "Background checks",
-      "Incident response training",
-    ],
-    color: "#F43F5E",
+    title: "Transparency & Control",
+    icon: Eye,
+    desc: "You stay in control of your data with clear visibility and privacy-first design.",
   },
 ];
 
@@ -84,127 +49,63 @@ export default function SecuritySection() {
       <Wrapper>
 
         {/* HEADER */}
-        <div className="text-center mb-20">
-          <div className="inline-block px-4 py-1.5 text-xs rounded-full bg-blue-500/10 text-blue-500 mb-4 font-semibold tracking-wider">
-            SECURITY FIRST
+        <div className="text-center mb-16">
+          <div className="inline-block px-4 py-1.5 text-xs rounded-full bg-green-500/10 text-green-600 mb-4 font-semibold tracking-wider">
+            SECURITY & PRIVACY
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-[var(--text)] mb-4">
-            Healthcare-grade AI security,
+          <h2 className="text-3xl md:text-4xl font-semibold text-black mb-4">
+            Your data is protected with
             <br />
-            <span className="grad-text">built for patient trust.</span>
+            enterprise-grade security
           </h2>
 
-          <p className="text-[var(--muted)] max-w-xl mx-auto leading-relaxed">
-            Enterprise-level encryption, monitoring, and compliance standards
-            designed specifically for healthcare systems.
+          <p className="text-gray-600 max-w-xl mx-auto leading-relaxed">
+            Vitalis AI ensures your health data stays private, encrypted,
+            and protected with strong security practices and modern standards.
           </p>
         </div>
 
-        {/* MAIN GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+        {/* CARD SECTION */}
+        <div className="relative rounded-3xl overflow-hidden">
 
-          {/* LEFT CARD */}
-          <div className="p-8 md:p-10 rounded-2xl bg-white/5 border border-white/10 backdrop-blur">
-            <h3 className="text-2xl font-semibold mb-4">
-              Security is not a feature.
-              <br />
-              It’s the foundation of trust.
-            </h3>
+          {/* BACKGROUND */}
+          <div className="absolute inset-0 bg-gradient-to-r from-green-900/10 via-green-800/5 to-transparent"></div>
 
-            <p className="text-[var(--muted)] leading-relaxed mb-6">
-              Vitalis AI is engineered to protect sensitive healthcare data
-              with strict encryption, access control, and real-time monitoring.
-            </p>
+          <div className="relative grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6 p-6 md:p-10">
 
-            <div className="space-y-2 text-[var(--muted)]">
-              <p>✔ End-to-end encryption</p>
-              <p>✔ Role-based access</p>
-              <p>✔ Continuous monitoring</p>
-            </div>
-          </div>
-
-          {/* RIGHT STACK */}
-          <div className="flex flex-col gap-5">
-            {securityData.slice(0, 3).map((item, i) => {
+            {securityData.map((item, i) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={i}
-                  className="p-5 rounded-xl bg-white/5 border border-white/10 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  className="group p-6 rounded-2xl bg-white/80 backdrop-blur border border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div
-                      className="w-10 h-10 rounded-lg flex items-center justify-center"
-                      style={{
-                        background: `${item.color}15`,
-                        border: `1px solid ${item.color}30`,
-                      }}
-                    >
-                      <Icon size={20} color={item.color} />
-                    </div>
-
-                    <h4 className="font-semibold text-sm">
-                      {item.title}
-                    </h4>
+                  {/* ICON */}
+                  <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center mb-4">
+                    <Icon size={22} className="text-green-600" />
                   </div>
 
-                  <div className="space-y-2">
-                    {item.items.map((text, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/5 text-xs text-[var(--muted)]"
-                      >
-                        <span>{text}</span>
-                        <span className="text-green-500">✔</span>
-                      </div>
-                    ))}
+                  {/* TITLE */}
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {item.title}
+                  </h3>
+
+                  {/* DESCRIPTION */}
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {item.desc}
+                  </p>
+
+                  {/* HOVER TEXT */}
+                  <div className="mt-4 text-green-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition">
+                    Learn More →
                   </div>
                 </div>
               );
             })}
+
           </div>
-        </div>
-
-        {/* BOTTOM GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {securityData.slice(3).map((item, i) => {
-            const Icon = item.icon;
-
-            return (
-              <div
-                key={i}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-3"
-                  style={{
-                    background: `${item.color}15`,
-                    border: `1px solid ${item.color}30`,
-                  }}
-                >
-                  <Icon size={22} color={item.color} />
-                </div>
-
-                <h4 className="font-semibold mb-3">
-                  {item.title}
-                </h4>
-
-                <div className="space-y-2">
-                  {item.items.map((text, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/5 text-xs text-[var(--muted)]"
-                    >
-                      <span>{text}</span>
-                      <span className="text-green-500">✔</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
         </div>
 
       </Wrapper>

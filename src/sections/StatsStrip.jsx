@@ -6,7 +6,7 @@ export default function StatsStrip() {
         border border-white/40 rounded-3xl shadow-lg 
         px-6 py-6 md:px-10 md:py-8">
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-6 text-center">
 
           <div>
             <h3 className="text-3xl font-bold text-[var(--text)]">95%</h3>

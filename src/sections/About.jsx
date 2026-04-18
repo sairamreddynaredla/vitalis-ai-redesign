@@ -3,7 +3,7 @@ import aboutImg from "../assets/aboutus.jpg";
 export default function About() {
   return (
     <section id="about" className="scroll-mt-24 px-6 py-20">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center px-4">
         
         {/* Image */}
         <div>
