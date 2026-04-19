@@ -18,7 +18,7 @@ export default function PromiseSection() {
                 OUR PROMISE
               </p>
 
-              <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
                 Our Unwavering Commitment to Security
               </h2>
 

@@ -3,169 +3,65 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    // Footer wrapper
-    <footer className="bg-gray-50 mt-16 md:mt-20 px-4 sm:px-6 md:px-10 py-10 md:py-12">
-      
-      {/* Top Grid Section */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
-        {/* Brand + Description */}
-        <div>
-          <h2 className="text-lg sm:text-xl font-bold text-gray-900">Vitalis AI</h2>
+    <footer className="bg-white px-4 sm:px-6 md:px-10 py-10 md:py-12 border-t border-gray-200">
 
-          <p className="text-sm sm:text-base text-gray-500 mt-2">
-            Smart health tracking powered by AI.
-          </p>
-
-          {/* Social Media Links */}
-          <div className="flex flex-wrap gap-3 sm:gap-4 mt-4 text-gray-600">
-
-            {/* Instagram */}
-            <a
-              href="https://www.instagram.com/vitalisglobal/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:scale-110"
-            >
-              <FaInstagram size={18} />
-            </a>
-
-            {/* Facebook */}
-            <a
-              href="https://www.facebook.com/people/Vitalis-Global/61586147249989/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:scale-110"
-            >
-              <FaFacebook size={18} />
-            </a>
-
-            {/* X (Twitter) */}
-            <a
-              href="https://x.com/vitalisglobal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:scale-110"
-            >
-              <FaXTwitter size={18} />
-            </a>
-
-            {/* LinkedIn */}
-            <a
-              href="https://www.linkedin.com/company/vitalis-ai-global/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:scale-110"
-            >
-              <FaLinkedin size={18} />
-            </a>
-
-          </div>
-        </div>
-
-        {/* Product Links */}
-        <div>
-          <h3 className="font-semibold mb-3 text-gray-900 text-sm sm:text-base">Product</h3>
-
-          <ul className="space-y-2 text-sm sm:text-base text-gray-500">
-            <li>
-              <a href="#features" className="hover:text-gray-800">
-                Features
-              </a>
-            </li>
-            <li>
-              <a href="#how-it-works" className="hover:text-gray-800">
-                How it works
-              </a>
-            </li>
-            <li>
-              <span className="cursor-pointer hover:text-gray-800">
-                Pricing
-              </span>
-            </li>
-            <li>
-              <span className="cursor-pointer hover:text-gray-800">
-                Download
-              </span>
-            </li>
-          </ul>
-        </div>
-
-        {/* Company Links */}
-        <div>
-          <h3 className="font-semibold mb-3 text-gray-900 text-sm sm:text-base">Company</h3>
-
-          <ul className="space-y-2 text-sm sm:text-base text-gray-500">
-            <li>
-              <a href="#about" className="hover:text-gray-800">
-                About
-              </a>
-            </li>
-            <li>
-              <span className="cursor-pointer hover:text-gray-800">
-                Blog
-              </span>
-            </li>
-            <li>
-              <span className="cursor-pointer hover:text-gray-800">
-                Careers
-              </span>
-            </li>
-            <li>
-              <span className="cursor-pointer hover:text-gray-800">
-                Contact
-              </span>
-            </li>
-          </ul>
-        </div>
-
-        {/* Support Links */}
-        <div>
-          <h3 className="font-semibold mb-3 text-gray-900 text-sm sm:text-base">Support</h3>
-
-          <ul className="space-y-2 text-sm sm:text-base text-gray-500">
-            <li>
-              <a
-                href="https://www.vitalisglobal.ai/privacy-policy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gray-800"
-              >
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.vitalisglobal.ai/terms-service"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gray-800"
-              >
-                Terms of Service
-              </a>
-            </li>
-          </ul>
-        </div>
-
+      {/* MEDICAL DISCLAIMER */}
+      <div className="max-w-2xl mx-auto mb-10 border border-yellow-400 bg-[#1a2535] rounded-xl px-5 py-5 text-center">
+        <p className="text-yellow-400 text-xs sm:text-sm font-semibold uppercase tracking-wide mb-2">
+          ⚠ Important Medical Disclaimer
+        </p>
+        <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+          Vitalis AI is an information and management platform and is not a
+          substitute for professional healthcare providers or doctors. Always
+          consult qualified medical professionals for personal medical advice,
+          diagnosis, or treatment plans.
+        </p>
       </div>
 
-      {/* Bottom Section */}
-      <div className="max-w-7xl mx-auto mt-8 md:mt-10 border-t pt-5 md:pt-6 flex flex-col items-center text-xs sm:text-sm text-gray-400">
+      {/* CONNECT WITH US */}
+      <div className="text-center mb-8">
+        <p className="text-gray-800 font-semibold text-xs tracking-widest uppercase mb-4">
+          Connect With Us
+        </p>
+        <div className="flex justify-center gap-4 text-gray-600">
+          <a href="https://www.facebook.com/people/Vitalis-Global/61586147249989/" target="_blank" rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:border-gray-900 hover:text-gray-900 transition">
+            <FaFacebook size={16} />
+          </a>
+          <a href="https://www.instagram.com/vitalisglobal/" target="_blank" rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:border-gray-900 hover:text-gray-900 transition">
+            <FaInstagram size={16} />
+          </a>
+          <a href="https://x.com/vitalisglobal" target="_blank" rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:border-gray-900 hover:text-gray-900 transition">
+            <FaXTwitter size={16} />
+          </a>
+          <a href="https://www.linkedin.com/company/vitalis-ai-global/" target="_blank" rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:border-gray-900 hover:text-gray-900 transition">
+            <FaLinkedin size={16} />
+          </a>
+        </div>
+      </div>
 
-        {/* Copyright */}
+      {/* COPYRIGHT */}
+      <div className="max-w-7xl mx-auto border-t border-gray-200 pt-5 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm text-gray-600 gap-3">
         <p className="text-center leading-relaxed px-2">
           © {new Date().getFullYear()} Vitalis AI is a product owned and operated by{" "}
-          <a
-            href="https://www.virtutechsolutions.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-gray-600"
-          >
+          <a href="https://www.virtutechsolutions.com/" target="_blank" rel="noopener noreferrer" className="underline font-semibold text-gray-900 hover:text-gray-700">
             Virtu Tech Solutions
           </a>
           . All rights reserved.
         </p>
-
+        <div className="flex gap-4 font-medium text-gray-700">
+          <a href="https://www.vitalisglobal.ai/terms-service" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition">
+            Terms of Service
+          </a>
+          <a href="https://www.vitalisglobal.ai/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition">
+            Privacy Policy
+          </a>
+        </div>
       </div>
+
     </footer>
   );
 }

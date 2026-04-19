@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import logo from "../assets/logo.png";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,7 +14,7 @@ export default function Navbar() {
     const section = document.getElementById(id);
 
     if (section) {
-      const navbarHeight = 80; // 🔧 slightly adjusted for mobile
+      const navbarHeight = 80;
 
       const y =
         section.getBoundingClientRect().top +
@@ -41,32 +41,19 @@ export default function Navbar() {
             : "bg-blue-50/80 backdrop-blur-sm"
         }`}
       >
-        {/* ✅ LOGO */}
-        <div className="flex items-center gap-2 cursor-pointer group">
+        {/* LOGO */}
+        <div className="flex items-center gap-2">
           <img
-            src="/logo.png"
+            src={logo}
             alt="Vitalis AI Logo"
-            className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 object-contain transition-all duration-300 
-            group-hover:scale-110 group-hover:rotate-6"
+            className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 object-contain"
           />
-
-          <h1
-            className="relative text-sm sm:text-base md:text-lg font-semibold overflow-hidden 
-            group-hover:drop-shadow-[0_0_10px_rgba(99,102,241,0.6)]"
-          >
-            <span className="text-gray-800 font-semibold tracking-wide">
-  Vitalis AI
-</span>
-
-            <span
-              className="absolute top-0 left-[-120%] w-full h-full 
-              bg-gradient-to-r from-transparent via-white/40 to-transparent 
-              skew-x-12 group-hover:left-[120%] transition-all duration-700"
-            ></span>
+          <h1 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 tracking-wide">
+            Vitalis AI
           </h1>
         </div>
 
-        {/* ✅ DESKTOP NAV */}
+        {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8 text-gray-700 font-medium">
           <span
             onClick={() => scrollToSection("about")}
@@ -90,7 +77,7 @@ export default function Navbar() {
           </span>
         </div>
 
-        {/* ✅ MOBILE MENU BUTTON */}
+        {/* MOBILE MENU BUTTON */}
         <button
           className="md:hidden text-gray-700 text-xl sm:text-2xl"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -99,7 +86,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* ✅ MOBILE MENU */}
+      {/* MOBILE MENU */}
       {menuOpen && (
         <div className="absolute top-[65px] sm:top-[75px] md:top-[85px] left-1/2 -translate-x-1/2 
         w-[94%] sm:w-[92%] max-w-sm bg-white shadow-xl rounded-2xl p-5 sm:p-6 

@@ -28,29 +28,38 @@ const trustPoints = [
 
 export default function TrustSection() {
   return (
-    <Section bg="transparent">
+    <Section bg="transparent" className="py-20 sm:py-24">
       <Wrapper>
 
         {/* HEADER */}
-        <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 text-xs rounded-full bg-green-500/10 text-green-600 mb-4 font-semibold tracking-wider">
-            TRUST & RELIABILITY
-          </div>
+        <div className="text-center max-w-3xl mx-auto px-4 mb-16">
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-black mb-4">
+          {/* Badge */}
+          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wide 
+            rounded-full bg-green-100 text-green-700 mb-5">
+            TRUST & RELIABILITY
+          </span>
+
+          {/* Heading (FIXED SIZE) */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold 
+            leading-snug text-gray-900 mb-5">
+
             Built for reliability,
-            <br />
+            <br className="hidden sm:block" />
             designed for your health.
+
           </h2>
 
-          <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          {/* Subtext */}
+          <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             As a newly launched platform, our focus is not on numbers — 
             but on delivering accurate, safe, and transparent health insights you can trust.
           </p>
+
         </div>
 
         {/* TRUST CARDS */}
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-5 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
 
           {trustPoints.map((item, i) => {
             const Icon = item.icon;
@@ -58,15 +67,18 @@ export default function TrustSection() {
             return (
               <div
                 key={i}
-                className="p-6 rounded-2xl bg-white border border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="p-6 rounded-2xl bg-white border border-gray-200 
+                shadow-sm hover:shadow-xl transition-all duration-300 
+                hover:-translate-y-1"
               >
                 {/* ICON */}
-                <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-green-100 
+                  flex items-center justify-center mb-4">
                   <Icon size={22} className="text-green-600" />
                 </div>
 
                 {/* TITLE */}
-                <h3 className="text-md font-semibold text-gray-900 mb-2">
+                <h3 className="text-base font-semibold text-gray-900 mb-2">
                   {item.title}
                 </h3>
 
@@ -82,9 +94,13 @@ export default function TrustSection() {
 
         {/* BOTTOM NOTE */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-50 text-green-700 text-sm font-medium border border-green-100">
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full 
+            bg-green-50 text-green-700 text-sm font-medium 
+            border border-green-100">
+
             <ShieldCheck size={18} />
             We’re committed to building trust through accuracy, not assumptions
+
           </div>
         </div>
 

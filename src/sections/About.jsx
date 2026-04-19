@@ -3,7 +3,7 @@ import aboutImg from "../assets/aboutus.jpg";
 export default function About() {
   return (
     <section id="about" className="scroll-mt-24 px-6 py-20">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center px-4">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
         
         {/* Image */}
         <div>
@@ -20,10 +20,9 @@ export default function About() {
             About Us
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-            Built to Make Healthy Living Smarter
-          </h2>
-
+         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-snug text-gray-900">
+  Built to Make Healthy Living Smarter
+</h2>
           <p className="mt-6 text-lg text-gray-600">
             Vitalis AI is designed to simplify everyday health decisions using intelligent technology.
             From scanning meals to analyzing groceries and medical reports, we help you understand

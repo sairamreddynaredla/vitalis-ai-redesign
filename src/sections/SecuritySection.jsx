@@ -1,114 +1,163 @@
+import React from "react";
 import {
-  Database,
   Lock,
+  ShieldCheck,
+  UserCheck,
+  Database,
   Server,
-  Shield,
   Users,
-  Eye,
+  CheckCircle,
 } from "lucide-react";
-
-import Section from "../components/ui/Section";
-import Wrapper from "../components/ui/Wrapper";
 
 const securityData = [
   {
-    title: "Data Encryption",
     icon: Lock,
-    desc: "AES-256 encryption, TLS 1.3 secure transfer and encrypted backups.",
+    tag: "DATA ENCRYPTION",
+    color: "bg-blue-100 text-blue-700",
+    title: "Data Encryption",
+    desc: "All patient data is encrypted using AES-256 encryption both in transit and at rest.",
+    points: [
+      "AES-256 encryption",
+      "TLS 1.3 for data in transit",
+      "Zero-knowledge architecture",
+      "Encrypted backups",
+    ],
   },
   {
+    icon: ShieldCheck,
+    tag: "COMPLIANCE & MONITORING",
+    color: "bg-purple-100 text-purple-700",
     title: "Compliance Monitoring",
-    icon: Shield,
-    desc: "Automated checks, third-party audits and risk management protocols.",
+    desc: "Continuous compliance monitoring ensures we meet healthcare security standards.",
+    points: [
+      "Automated compliance checks",
+      "Third-party audits",
+      "Vulnerability assessments",
+      "Risk management protocols",
+    ],
   },
   {
+    icon: UserCheck,
+    tag: "ACCESS CONTROL",
+    color: "bg-orange-100 text-orange-700",
     title: "Access Control",
-    icon: Users,
-    desc: "Multi-factor authentication, role-based access and audit logs.",
+    desc: "Only authorized users can access sensitive data with strict control systems.",
+    points: [
+      "Multi-factor authentication",
+      "Role-based access control",
+      "Session management",
+      "Audit logging",
+    ],
   },
   {
-    title: "Data Governance",
     icon: Database,
-    desc: "GDPR compliance, retention policies and data portability.",
+    tag: "DATA GOVERNANCE",
+    color: "bg-green-100 text-green-700",
+    title: "Data Governance",
+    desc: "Policies ensure data privacy and regulatory compliance.",
+    points: [
+      "General Data Protection Regulation",
+      "Retention policies",
+      "Right to deletion",
+      "Data portability",
+    ],
   },
   {
-    title: "Infrastructure Security",
     icon: Server,
-    desc: "Secure cloud hosting with continuous monitoring and threat detection.",
+    tag: "INFRASTRUCTURE SECURITY",
+    color: "bg-indigo-100 text-indigo-700",
+    title: "Infrastructure Security",
+    desc: "Secure cloud infrastructure with continuous monitoring.",
+    points: [
+      "SOC 2 certified hosting",
+      "24/7 security monitoring",
+      "Intrusion detection",
+      "Regular penetration testing",
+    ],
   },
   {
-    title: "Transparency & Control",
-    icon: Eye,
-    desc: "You stay in control of your data with clear visibility and privacy-first design.",
+    icon: Users,
+    tag: "STAFF TRAINING",
+    color: "bg-red-100 text-red-700",
+    title: "Staff Training",
+    desc: "Our team undergoes regular security training and background checks.",
+    points: [
+      "HIPAA training certification",
+      "Security awareness programs",
+      "Background checks",
+      "Incident response training",
+    ],
   },
 ];
 
-export default function SecuritySection() {
+export default function Security() {
   return (
-    <Section bg="transparent">
-      <Wrapper>
+    <section className="w-full py-20 bg-[#f4f7fb]">
+      
+      {/* Header */}
+      <div className="text-center max-w-3xl mx-auto px-4 mb-16">
 
-        {/* HEADER */}
-        <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 text-xs rounded-full bg-green-500/10 text-green-600 mb-4 font-semibold tracking-wider">
-            SECURITY & PRIVACY
-          </div>
+        {/* ✅ FIXED BADGE (LIKE FAQ) */}
+        <span className="inline-block text-xs font-semibold px-4 py-1.5 rounded-full mb-4 
+        bg-green-100 text-green-700">
+          SECURITY FIRST
+        </span>
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-black mb-4">
-            Your data is protected with
-            <br />
-            enterprise-grade security
-          </h2>
+        {/* ✅ FIXED HEADING */}
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          Enterprise-Grade Security at{" "}
+          <span className="text-gray-900">Every Layer</span>
+        </h2>
 
-          <p className="text-gray-600 max-w-xl mx-auto leading-relaxed">
-            Vitalis AI ensures your health data stays private, encrypted,
-            and protected with strong security practices and modern standards.
-          </p>
-        </div>
+        <p className="text-gray-500 text-sm mt-3">
+          Vitalis AI is a fully managed, standardized, and externally audited platform
+          built with healthcare-grade security at its core.
+        </p>
+      </div>
 
-        {/* CARD SECTION */}
-        <div className="relative rounded-3xl overflow-hidden">
+      {/* Cards */}
+      <div className="max-w-6xl mx-auto px-4 grid gap-8 md:grid-cols-2">
+        {securityData.map((item, index) => {
+          const Icon = item.icon;
 
-          {/* BACKGROUND */}
-          <div className="absolute inset-0 bg-gradient-to-r from-green-900/10 via-green-800/5 to-transparent"></div>
+          return (
+            <div
+              key={index}
+              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition"
+            >
+              {/* Tag */}
+              <span
+                className={`text-xs font-semibold px-3 py-1 rounded-full ${item.color}`}
+              >
+                {item.tag}
+              </span>
 
-          <div className="relative grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6 p-6 md:p-10">
+              {/* Title */}
+              <h3 className="text-xl font-semibold text-gray-900 mt-4">
+                {item.title}
+              </h3>
 
-            {securityData.map((item, i) => {
-              const Icon = item.icon;
+              {/* Description */}
+              <p className="text-sm text-gray-500 mt-2 mb-5">
+                {item.desc}
+              </p>
 
-              return (
-                <div
-                  key={i}
-                  className="group p-6 rounded-2xl bg-white/80 backdrop-blur border border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                >
-                  {/* ICON */}
-                  <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center mb-4">
-                    <Icon size={22} className="text-green-600" />
+              {/* Points */}
+              <div className="space-y-3">
+                {item.points.map((point, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center justify-between bg-gray-50 border border-gray-100 rounded-lg px-4 py-2"
+                  >
+                    <span className="text-sm text-gray-700">{point}</span>
+                    <CheckCircle className="w-4 h-4 text-green-500" />
                   </div>
-
-                  {/* TITLE */}
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {item.title}
-                  </h3>
-
-                  {/* DESCRIPTION */}
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {item.desc}
-                  </p>
-
-                  {/* HOVER TEXT */}
-                  <div className="mt-4 text-green-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition">
-                    Learn More →
-                  </div>
-                </div>
-              );
-            })}
-
-          </div>
-        </div>
-
-      </Wrapper>
-    </Section>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 }

@@ -15,15 +15,16 @@ export default function FeatureSection() {
     <section id="features" className="scroll-mt-24 px-4 sm:px-6 md:px-10 py-12 md:py-20 bg-gradient-to-b from-[#eef3ea] to-[#f7f5f2]">
       
       {/* ===================== HEADER ===================== */}
-      <div className="max-w-3xl mx-auto mb-12 md:mb-16 text-center">
+      <div className="max-w-2xl mx-auto mb-12 md:mb-16 text-center">
         
         {/* Section Badge */}
         <div className="inline-block px-4 sm:px-5 py-1.5 mb-4 text-sm font-semibold text-green-600 bg-green-100 rounded-full">
           Features
         </div>
 
-        {/* Section Title */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-800">
+        {/* ✅ FINAL HEADING (CLEAN STARTUP STYLE) */}
+        <h2 className="text-2xl sm:text-3xl md:text-[34px] font-semibold 
+        leading-tight tracking-tight text-gray-900">
           Everything you need to manage your health
         </h2>
 
@@ -38,7 +39,7 @@ export default function FeatureSection() {
         
         {/* Content */}
         <div>
-          <h3 className="mb-4 text-2xl sm:text-3xl font-semibold text-gray-800">
+          <h3 className="mb-4 text-2xl sm:text-3xl font-semibold text-gray-900">
             Snap your meal. <br /> Know everything.
           </h3>
 
@@ -47,7 +48,6 @@ export default function FeatureSection() {
             and nutrition insights — no typing needed.
           </p>
 
-          {/* Feature List */}
           <ul className="space-y-3">
             {[
               "Instant calorie detection",
@@ -78,30 +78,12 @@ export default function FeatureSection() {
       {/* ===================== FEATURE GRID ===================== */}
       <div className="max-w-6xl mx-auto mb-16 md:mb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
         {[
-          {
-            title: "Meal Planner",
-            icon: <Utensils className="text-green-600" />,
-          },
-          {
-            title: "Grocery Scanner",
-            icon: <ShoppingCart className="text-green-600" />,
-          },
-          {
-            title: "Food Risk Scanner",
-            icon: <AlertTriangle className="text-yellow-500" />,
-          },
-          {
-            title: "AI Menu Analyzer",
-            icon: <Utensils className="text-green-600" />,
-          },
-          {
-            title: "Intermittent Fasting",
-            icon: <Clock className="text-green-600" />,
-          },
-          {
-            title: "Smart Reminders",
-            icon: <Bell className="text-green-600" />,
-          },
+          { title: "Meal Planner", icon: <Utensils className="text-green-600" /> },
+          { title: "Grocery Scanner", icon: <ShoppingCart className="text-green-600" /> },
+          { title: "Food Risk Scanner", icon: <AlertTriangle className="text-yellow-500" /> },
+          { title: "AI Menu Analyzer", icon: <Utensils className="text-green-600" /> },
+          { title: "Intermittent Fasting", icon: <Clock className="text-green-600" /> },
+          { title: "Smart Reminders", icon: <Bell className="text-green-600" /> },
         ].map((feature, index) => (
           <div
             key={index}
@@ -125,7 +107,7 @@ export default function FeatureSection() {
         
         {/* Content */}
         <div>
-          <h3 className="mb-4 text-2xl sm:text-3xl font-semibold text-gray-800">
+          <h3 className="mb-4 text-2xl sm:text-3xl font-semibold text-gray-900">
             Medical Analyzer
           </h3>
 

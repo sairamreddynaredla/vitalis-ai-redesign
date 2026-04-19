@@ -54,7 +54,7 @@ export default function FAQ() {
 
   return (
     // Section wrapper with vertical centering
-    <section className="min-h-screen flex flex-col justify-center px-4 py-12 bg-gradient-to-b from-[#f6fbf8] to-[#eef7f3]">
+    <section className="px-4 py-20 md:py-28 bg-gradient-to-b from-[#f6fbf8] to-[#eef7f3]">
       
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-8">
@@ -66,11 +66,11 @@ export default function FAQ() {
 
         {/* Title */}
         <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 leading-tight">
-          Smarter Health Starts{" "}
-          <span className="bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent">
-            Here
-          </span>
-        </h2>
+  Smarter Health Starts{" "}
+  <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+    Here
+  </span>
+</h2>
 
         {/* Subtitle */}
         <p className="text-gray-500 mt-2 text-xs md:text-sm">

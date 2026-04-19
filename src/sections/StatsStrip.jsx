@@ -1,6 +1,6 @@
 export default function StatsStrip() {
   return (
-    <section className="px-4 mt-6 md:mt-8">
+    <section className="px-4 py-10">
       
       <div className="max-w-6xl mx-auto bg-white/60 backdrop-blur-md 
         border border-white/40 rounded-3xl shadow-lg 

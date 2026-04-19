@@ -56,23 +56,6 @@ const steps = [
     ),
     phone: null,
   },
-  {
-    id: 5,
-    title: (
-      <>
-        Track Automatically<span className="text-red-600">—</span>No Manual
-        Logs
-      </>
-    ),
-    desc: (
-      <>
-        Everything is saved instantly.
-        <br />
-        Monitor your daily intake, calories, and progress effortlessly.
-      </>
-    ),
-    phone: null,
-  },
 ];
 
 function Phone1() {
@@ -209,12 +192,14 @@ function Phone2() {
 
 export default function HowItWorks() {
   return (
-    <section className="bg-[#f0f5ee] py-12 px-4 min-h-screen">
+    <section id="how" className="bg-[#f0f5ee] py-20 md:py-28 px-4">
       {/* Header */}
       <div className="text-center mb-10">
-        <h1 className="text-4xl font-bold text-[#1a3a1a] mb-2">
-          How It Works
-        </h1>
+    <h1 className="text-4xl font-bold mb-2 
+bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 
+bg-clip-text text-transparent inline-block">
+  How It Works
+</h1>
         <p className="text-base font-semibold text-[#3a7a3a] mb-1">
           From Scan → Insight → Better Choices
         </p>
@@ -246,7 +231,9 @@ export default function HowItWorks() {
             {/* Card */}
             <div className="flex-1 bg-white rounded-2xl p-4 flex items-start gap-3 mb-3">
               <div className="flex-1">
-                <h2 className="text-base font-bold text-[#1a2a1a] mb-2 leading-snug">
+                <h2 className="text-base font-bold mb-2 leading-snug 
+bg-gradient-to-r from-gray-900 to-gray-700 
+bg-clip-text text-transparent inline-block">
                   {step.title}
                 </h2>
                 <p className="text-[13px] text-gray-500 leading-relaxed mb-2">

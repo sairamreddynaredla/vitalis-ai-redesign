@@ -6,9 +6,9 @@ export default function Hero() {
       <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
         
         {/* Heading */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-tight">
-          One AI App for Your Complete Health
-        </h1>
+       <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight text-gray-900">
+  One AI App for Your Complete Health
+</h1>
 
         {/* Subtext */}
         <p className="mt-3 text-sm sm:text-base text-gray-600 max-w-md">

@@ -1,143 +1,122 @@
-import scanImg from "../assets/workflow-sec-scan.jpg";
-import insightsImg from "../assets/workflow-sec-insights.jpg";
+import React from "react";
+import {
+  ClipboardList,
+  Brain,
+  FileText,
+  Users,
+  Settings,
+} from "lucide-react";
 
-export default function WorkflowSection() {
+// ✅ IMAGE IMPORT
+import workflowImg from "../assets/workflow-center.jpg";
+
+const steps = [
+  {
+    id: 1,
+    icon: ClipboardList,
+    title: "Clinical Documentation",
+    desc: "Automatically capture and structure medical data during consultations, including patient history, vitals, assessments, and treatment plans in real-time.",
+  },
+  {
+    id: 2,
+    icon: Brain,
+    title: "Medibuddy AI Assistant",
+    desc: "Get answers to your questions, including patient updates, appointments, and profile details.",
+  },
+  {
+    id: 3,
+    icon: FileText,
+    title: "Consultation Transcripts",
+    desc: "Record consultations, generate transcripts, and export them as PDFs for clinical documentation.",
+  },
+  {
+    id: 4,
+    icon: Users,
+    title: "Active Patient Management",
+    desc: "Doctors can check active patients, confirm consultations, and manage cases efficiently.",
+  },
+  {
+    id: 5,
+    icon: Settings,
+    title: "Profile Management",
+    desc: "Edit clinic name, contact email, specialization, and related profile settings anytime.",
+  },
+];
+
+// CARD
+function Card({ step }) {
+  const Icon = step.icon;
+
   return (
-    <section className="relative overflow-hidden bg-[#f3f5ef] py-24 px-6">
+    <div className="w-full bg-white border border-gray-200 p-6 rounded-2xl 
+    shadow-md hover:shadow-lg transition-all duration-300">
 
-      {/* 🔥 TOP WAVE */}
-      <div className="absolute top-0 left-0 w-full h-[220px] bg-[#dfe8d5] rounded-b-[50%]" />
+      <div className="flex items-start gap-4">
+        <div className="w-11 h-11 flex items-center justify-center rounded-lg 
+        bg-emerald-50 text-emerald-600 border border-emerald-100">
+          <Icon size={22} />
+        </div>
 
-      {/* 🔥 BOTTOM WAVE */}
-      <div className="absolute bottom-0 left-0 w-full h-[260px] bg-[#dfe8d5] rounded-t-[50%]" />
-
-      {/* 🔥 HEADER */}
-      <div className="relative text-center max-w-3xl mx-auto mb-20">
-        <h2 className="text-3xl md:text-4xl font-semibold text-[#2f3e2f]">
-          How Vitalis Workflow Works
-        </h2>
-        <p className="mt-3 text-[#5c6b5c] text-lg">
-          Your Journey to Healthier Habits
-        </p>
+        <div>
+          <h3 className="text-base font-semibold text-gray-900 mb-2">
+            {step.title}
+          </h3>
+          <p className="text-sm text-gray-600 leading-relaxed">
+            {step.desc}
+          </p>
+        </div>
       </div>
+    </div>
+  );
+}
 
-      {/* 🔥 FLOW CONTAINER */}
-      <div className="relative max-w-6xl mx-auto flex flex-col gap-10 md:block">
+export default function Workflow() {
+  return (
+    <section className="w-full bg-white py-20">
 
-        {/* STEP 1 */}
-        <div className="relative md:absolute md:left-0 md:top-0 
-                        bg-white p-5 rounded-2xl shadow-lg 
-                        w-full max-w-[260px] mx-auto">
+      <div className="max-w-7xl mx-auto px-6 w-full">
 
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 
-                          md:left-3 md:translate-x-0 
-                          bg-[#9fb37a] text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">
-            1
-          </div>
-
-          <img
-            src={scanImg}
-            alt="scan"
-            className="rounded-xl mb-3 object-cover h-[140px] w-full"
-          />
-
-          <h3 className="font-semibold text-[#2f3e2f]">
-            1. Capture Your Plate
-          </h3>
-          <p className="text-sm text-[#5c6b5c] mt-1">
-            Snap a photo of your meal using our app.
-          </p>
+        {/* HEADING */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-snug">
+            Clinical intelligence designed to simplify doctor's workflows
+          </h2>
         </div>
 
-        {/* STEP 2 */}
-        <div className="relative w-full max-w-[260px] mx-auto
-                        md:absolute md:left-1/2 md:-translate-x-1/2 md:top-20
-                        bg-white p-5 rounded-2xl shadow-lg">
-
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 
-                          md:left-3 md:translate-x-0 
-                          bg-[#9fb37a] text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">
-            2
-          </div>
-
-          <div className="h-[140px] flex items-center justify-center bg-gray-100 rounded-xl mb-3">
-            <span className="text-sm text-gray-500">
-              We’re processing your dish
-            </span>
-          </div>
-
-          <h3 className="font-semibold text-[#2f3e2f]">
-            2. Instant Analysis
-          </h3>
-          <p className="text-sm text-[#5c6b5c] mt-1">
-            Get nutritional analysis in seconds.
-          </p>
+        {/* MOBILE */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:hidden">
+          {steps.map((step) => (
+            <Card key={step.id} step={step} />
+          ))}
         </div>
 
-        {/* STEP 3 */}
-        <div className="relative md:absolute md:right-0 md:top-40 
-                        bg-white p-5 rounded-2xl shadow-lg 
-                        w-full max-w-[260px] mx-auto">
+        {/* DESKTOP GRID */}
+        <div className="hidden md:grid grid-cols-3 gap-8 items-center">
 
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 
-                          md:left-3 md:translate-x-0 
-                          bg-[#9fb37a] text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">
-            3
+          {/* ROW 1 */}
+          <Card step={steps[0]} />
+
+          {/* CENTER IMAGE */}
+          <div className="flex justify-center">
+            <div className="w-40 h-40 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center">
+              <img
+                src={workflowImg}
+                alt="workflow"
+                className="w-28 h-28 object-contain"
+              />
+            </div>
           </div>
 
-          <img
-            src={insightsImg}
-            alt="insights"
-            className="rounded-xl mb-3 object-cover h-[140px] w-full"
-          />
+          <Card step={steps[1]} />
 
-          <h3 className="font-semibold text-[#2f3e2f]">
-            3. View Detailed Insights
-          </h3>
-          <p className="text-sm text-[#5c6b5c] mt-1">
-            See your meal’s macros, nutrition tips, and suggestions.
-          </p>
+          {/* ROW 2 */}
+          <Card step={steps[2]} />
+          <Card step={steps[4]} />
+          <Card step={steps[3]} />
+
         </div>
 
-        {/* 🔥 SVG CURVED ARROWS (desktop only) */}
-        <svg
-          className="hidden md:block absolute top-0 left-0 w-full h-full pointer-events-none"
-          viewBox="0 0 1000 400"
-        >
-          <path
-            d="M200 120 C350 50, 450 150, 500 130"
-            stroke="#9fb37a"
-            strokeWidth="2"
-            fill="none"
-            markerEnd="url(#arrow)"
-          />
-
-          <path
-            d="M520 180 C700 250, 780 180, 820 200"
-            stroke="#9fb37a"
-            strokeWidth="2"
-            fill="none"
-            markerEnd="url(#arrow)"
-          />
-
-          <defs>
-            <marker
-              id="arrow"
-              markerWidth="6"
-              markerHeight="6"
-              refX="5"
-              refY="3"
-              orient="auto"
-            >
-              <path d="M0,0 L6,3 L0,6 Z" fill="#9fb37a" />
-            </marker>
-          </defs>
-        </svg>
       </div>
-
-    
-      <div className="hidden md:block h-[420px]" />
-
     </section>
   );
 }
