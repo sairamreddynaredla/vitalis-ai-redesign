@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useReveal } from './hooks/useReveal'
 import Divider from './components/Divider'
 import Footer from './components/Footer'
@@ -16,6 +17,10 @@ import SecuritySection from './sections/SecuritySection'
 import FAQ from './sections/FAQ'
 import CTA from './sections/CTA'
 import CustomerSupport from './sections/CustomerSupport'
+
+// NEW PAGES
+import Terms from "./pages/TermsofService"
+import Privacy from "./pages/PrivacyPolicy"
 
 export default function App() {
   useReveal()
@@ -36,19 +41,39 @@ export default function App() {
   ]
 
   return (
-    <div className="bg-background min-h-screen overflow-x-hidden">
-      <Navbar />
+    <BrowserRouter>
+      <div className="bg-background min-h-screen overflow-x-hidden">
+        
+        <Navbar />
 
-      <main className="flex flex-col">
-        {sections.map((Section, index) => (
-          <div key={index}>
-            <Section />
-            {index !== sections.length - 1 && <Divider />}
-          </div>
-        ))}
-      </main>
+        <Routes>
 
-      <Footer />
-    </div>
+          {/* 🔹 Landing Page */}
+          <Route
+            path="/"
+            element={
+              <main className="flex flex-col">
+                {sections.map((Section, index) => (
+                  <div key={index}>
+                    <Section />
+                    {index !== sections.length - 1 && <Divider />}
+                  </div>
+                ))}
+              </main>
+            }
+          />
+
+          {/* 🔹 Terms Page */}
+          <Route path="/terms" element={<Terms />} />
+
+          {/* 🔹 Privacy Page */}
+          <Route path="/privacy" element={<Privacy />} />
+
+        </Routes>
+
+        <Footer />
+
+      </div>
+    </BrowserRouter>
   )
 }

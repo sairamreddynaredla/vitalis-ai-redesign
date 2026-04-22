@@ -77,7 +77,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-20 px-4 md:px-10 bg-[#f6f8f6]">
+    <section id="features" className="py-20 px-4 md:px-10 bg-[#f6f8f6]">
 
       {/* HEADER */}
       <div className="text-center max-w-3xl mx-auto mb-16">
@@ -91,9 +91,9 @@ export default function Features() {
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 leading-snug">
           Everything you need to{" "}
           <span className="text-black">manage</span>{" "}
-          <span className="bg-gradient-to-r from-green-500 to-green-700 bg-clip-text text-transparent">
-            your health
-          </span>
+         <span className="text-black">
+  your health
+</span>
         </h2>
 
         <p className="text-gray-500 mt-4 text-lg">
