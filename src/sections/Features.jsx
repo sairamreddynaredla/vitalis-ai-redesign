@@ -1,130 +1,159 @@
-import {
-  CheckCircle,
-  ShoppingCart,
-  AlertTriangle,
-  Utensils,
-  Clock,
-  Bell,
-} from "lucide-react";
+import React from "react";
+import snapMeal from "../assets/snap-meal.jpg";
+import mealPlanner from "../assets/meal-planner.jpg";
+import grocery from "../assets/ai-grocery-scanner.jpg";
+import expiry from "../assets/Food-quality-risk-scanner.jpg";
+import menu from "../assets/ai-menu-analyser.jpg";
+import fasting from "../assets/fasting2.jpg";
 
-import foodImg from "../assets/food.jpg";
-import medicalImg from "../assets/medical.jpg";
+const features = [
+  {
+    tag: "Scan 🍽️",
+    title: "Snap Your Meal",
+    desc: "Take a photo of your plate and instantly get calories, macros, and smart eating guidance powered by AI.",
+    points: [
+      "Per-item calorie detection",
+      "Smart eat/skip suggestions",
+      "Full macro breakdown",
+    ],
+    image: snapMeal,
+  },
+  {
+    tag: "AI Plan 🧠",
+    title: "AI Meal Planner",
+    desc: "Get fully personalized meal plans based on your goals like weight loss, muscle gain, or health conditions.",
+    points: [
+      "Goal-based planning",
+      "Kitchen-first approach",
+      "Daily meal optimization",
+    ],
+    image: mealPlanner,
+  },
+  {
+    tag: "Scan 🛒",
+    title: "AI Grocery Scanner",
+    desc: "Scan product labels and instantly detect hidden sugars, additives, and get a complete health score.",
+    points: [
+      "500+ harmful compounds detection",
+      "Hidden sugar analysis",
+      "Health score (0–100)",
+    ],
+    image: grocery,
+  },
+  {
+    tag: "Safety ⚠️",
+    title: "Food Expiry & Risk Scanner",
+    desc: "Detect spoilage, mold, and food quality issues using AI vision before you consume anything risky.",
+    points: [
+      "Mold & fungus detection",
+      "Spoilage pattern analysis",
+      "Safety verdict system",
+    ],
+    image: expiry,
+  },
+  {
+    tag: "Analyze 📋",
+    title: "AI Menu Analyzer",
+    desc: "Upload menu or food photo and get the best eating plan with calories and health recommendations.",
+    points: [
+      "Menu upload or scan",
+      "Health-based suggestions",
+      "Calorie estimation",
+    ],
+    image: menu,
+  },
+  {
+    tag: "Fast ⏱️",
+    title: "Intermittent Fasting",
+    desc: "Track fasting progress with live timers, autophagy phases, and AI-powered coaching.",
+    points: [
+      "Live countdown timer",
+      "Autophagy tracking",
+      "AI fasting coach",
+    ],
+    image: fasting,
+  },
+];
 
-export default function FeatureSection() {
+export default function Features() {
   return (
-    <section id="features" className="scroll-mt-24 px-4 sm:px-6 md:px-10 py-12 md:py-20 bg-gradient-to-b from-[#eef3ea] to-[#f7f5f2]">
-      
-      {/* ===================== HEADER ===================== */}
-      <div className="max-w-2xl mx-auto mb-12 md:mb-16 text-center">
-        
-        {/* Section Badge */}
-        <div className="inline-block px-4 sm:px-5 py-1.5 mb-4 text-sm font-semibold text-green-600 bg-green-100 rounded-full">
-          Features
-        </div>
+    <section className="py-20 px-4 md:px-10 bg-[#f6f8f6]">
 
-        {/* ✅ FINAL HEADING (CLEAN STARTUP STYLE) */}
-        <h2 className="text-2xl sm:text-3xl md:text-[34px] font-semibold 
-        leading-tight tracking-tight text-gray-900">
-          Everything you need to manage your health
+      {/* HEADER */}
+      <div className="text-center max-w-3xl mx-auto mb-16">
+
+        {/* Badge */}
+        <p className="inline-block px-4 py-1 rounded-full bg-green-100 text-green-700 font-semibold mb-3 tracking-wide text-sm">
+          FEATURES
+        </p>
+
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 leading-snug">
+          Everything you need to{" "}
+          <span className="text-black">manage</span>{" "}
+          <span className="bg-gradient-to-r from-green-500 to-green-700 bg-clip-text text-transparent">
+            your health
+          </span>
         </h2>
 
-        {/* Section Description */}
-        <p className="mt-4 text-sm sm:text-base text-gray-500">
-          Scan food, plan meals, track habits, and understand your body — all powered by AI.
+        <p className="text-gray-500 mt-4 text-lg">
+          From scanning meals to tracking habits — your complete AI health assistant.
         </p>
       </div>
 
-      {/* ===================== FEATURE HIGHLIGHT ===================== */}
-      <div className="max-w-6xl mx-auto mb-16 md:mb-20 grid items-center gap-8 md:gap-10 p-5 sm:p-6 md:p-12 bg-white rounded-3xl shadow-md grid-cols-1 md:grid-cols-2">
-        
-        {/* Content */}
-        <div>
-          <h3 className="mb-4 text-2xl sm:text-3xl font-semibold text-gray-900">
-            Snap your meal. <br /> Know everything.
-          </h3>
+      {/* FEATURES */}
+      <div className="space-y-20">
+        {features.map((item, index) => {
+          const isReverse = index % 2 !== 0;
 
-          <p className="mb-6 text-sm sm:text-base text-gray-500">
-            Take a photo of your food and instantly get calories, protein, carbs,
-            and nutrition insights — no typing needed.
-          </p>
+          return (
+            <div
+              key={index}
+              className="flex flex-col md:flex-row ... bg-white/60 backdrop-blur-sm rounded-3xl p-6 md:p-12"
+            >
 
-          <ul className="space-y-3">
-            {[
-              "Instant calorie detection",
-              "Portion size estimation",
-              "Smart nutrition insights",
-            ].map((item, index) => (
-              <li
-                key={index}
-                className="flex items-center gap-2 text-sm sm:text-base text-gray-700"
-              >
-                <CheckCircle className="w-5 h-5 text-green-500" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
+              {/* TEXT */}
+              <div className="flex-1">
+                <p className="text-green-600 font-semibold mb-2 text-sm">
+                  {item.tag}
+                </p>
 
-        {/* Image */}
-        <div className="flex justify-center">
-          <img
-            src={foodImg}
-            alt="Food Scanner"
-            className="w-[220px] sm:w-[260px] md:w-[320px] rounded-2xl shadow-lg"
-          />
-        </div>
-      </div>
+                <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
+                  {item.title}
+                </h3>
 
-      {/* ===================== FEATURE GRID ===================== */}
-      <div className="max-w-6xl mx-auto mb-16 md:mb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
-        {[
-          { title: "Meal Planner", icon: <Utensils className="text-green-600" /> },
-          { title: "Grocery Scanner", icon: <ShoppingCart className="text-green-600" /> },
-          { title: "Food Risk Scanner", icon: <AlertTriangle className="text-yellow-500" /> },
-          { title: "AI Menu Analyzer", icon: <Utensils className="text-green-600" /> },
-          { title: "Intermittent Fasting", icon: <Clock className="text-green-600" /> },
-          { title: "Smart Reminders", icon: <Bell className="text-green-600" /> },
-        ].map((feature, index) => (
-          <div
-            key={index}
-            className="p-5 sm:p-6 transition bg-white rounded-2xl shadow-sm hover:shadow-md"
-          >
-            <div className="mb-3">{feature.icon}</div>
+                <p className="text-gray-600 mb-6 text-lg leading-relaxed">
+                  {item.desc}
+                </p>
 
-            <h4 className="mb-1 text-base sm:text-lg font-semibold text-gray-800">
-              {feature.title}
-            </h4>
+                {/* ✅ Clean bullets (no glow) */}
+                <ul className="space-y-3">
+                  {item.points.map((point, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-3 text-gray-700 text-[15px]"
+                    >
+                      <span className="mt-2 w-2 h-2 bg-green-500 rounded-full"></span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* IMAGE */}
+              <div className="flex-1 flex justify-center">
+                <div className="w-full max-w-[480px] h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] bg-white rounded-3xl p-4 border border-gray-200 overflow-hidden flex items-center justify-center">
+                
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
 
-            <p className="text-xs sm:text-sm text-gray-500">
-              AI-powered feature to improve your health tracking experience.
-            </p>
-          </div>
-        ))}
-      </div>
-
-      {/* ===================== MEDICAL ANALYZER ===================== */}
-      <div className="max-w-6xl mx-auto grid items-center gap-8 md:gap-10 p-5 sm:p-6 md:p-12 bg-white rounded-3xl shadow-md grid-cols-1 md:grid-cols-2">
-        
-        {/* Content */}
-        <div>
-          <h3 className="mb-4 text-2xl sm:text-3xl font-semibold text-gray-900">
-            Medical Analyzer
-          </h3>
-
-          <p className="text-sm sm:text-base text-gray-500">
-            Scan doctor prescriptions and get simple explanations in your language.
-            No confusion. Just clarity.
-          </p>
-        </div>
-
-        {/* Image */}
-        <div className="flex justify-center">
-          <img
-            src={medicalImg}
-            alt="Medical Analyzer"
-            className="w-[220px] sm:w-[260px] md:w-[320px] rounded-2xl shadow-lg"
-          />
-        </div>
+            </div>
+          );
+        })}
       </div>
 
     </section>

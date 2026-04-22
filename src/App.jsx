@@ -1,6 +1,4 @@
 import { useReveal } from './hooks/useReveal'
-import { ToastProvider } from './hooks/useToast'
-
 import Divider from './components/Divider'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
@@ -19,7 +17,7 @@ import FAQ from './sections/FAQ'
 import CTA from './sections/CTA'
 import CustomerSupport from './sections/CustomerSupport'
 
-function AppInner() {
+export default function App() {
   useReveal()
 
   const sections = [
@@ -52,13 +50,5 @@ function AppInner() {
 
       <Footer />
     </div>
-  )
-}
-
-export default function App() {
-  return (
-    <ToastProvider>
-      <AppInner />
-    </ToastProvider>
   )
 }
