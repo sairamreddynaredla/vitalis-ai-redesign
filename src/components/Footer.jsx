@@ -1,5 +1,6 @@
 import { FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -53,12 +54,12 @@ export default function Footer() {
           . All rights reserved.
         </p>
         <div className="flex gap-4 font-medium text-gray-700">
-          <a href="https://www.vitalisglobal.ai/terms-service" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition">
+          <Link to="/terms" className="hover:text-gray-900 transition">
             Terms of Service
-          </a>
-          <a href="https://www.vitalisglobal.ai/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition">
+          </Link>
+          <Link to="/privacy" className="hover:text-gray-900 transition">
             Privacy Policy
-          </a>
+          </Link>
         </div>
       </div>
 

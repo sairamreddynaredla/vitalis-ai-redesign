@@ -1,119 +1,237 @@
-export default function Privacy() {
+export default function PrivacyPolicy() {
   return (
-    <div className="max-w-4xl mx-auto py-16 px-4">
-      <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
-      <p>Privacy content here...Privacy Policy
-Effective date: 4/23/2026
+    <div className="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 md:px-10">
+      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-200 p-6 sm:p-10 text-gray-800 leading-relaxed">
 
-Important medical disclaimer: Vitalis AI is not a substitute for professional healthcare providers / Doctors. Therefore, we kindly advise you to consult with doctors or healthcare professionals for medical advice, diagnosis, or treatment.
+        {/* TITLE */}
+        <h1 className="text-4xl font-bold mb-2 text-gray-900">
+          Privacy Policy
+        </h1>
+        <p className="text-sm text-gray-500 mb-8">
+          Effective date: 4/23/2026
+        </p>
 
-Vitalis AI (“we”, “our”, or “us”) respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application and services.
+        {/* MEDICAL DISCLAIMER */}
+        <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-xl mb-8">
+          <p className="text-gray-800 text-sm">
+            <span className="font-semibold">Important medical disclaimer:</span>{" "}
+            Vitalis AI is not a substitute for professional healthcare providers / Doctors.
+            Therefore, we kindly advise you to consult with doctors or healthcare professionals
+            for medical advice, diagnosis, or treatment.
+          </p>
+        </div>
 
-1. Information We Collect
-When you use our application, we may collect the following types of information:
+        <p className="mb-6">
+          Vitalis AI (“we”, “our”, or “us”) respects your privacy and is committed
+          to protecting your personal data. This Privacy Policy explains how we
+          collect, use, disclose, and safeguard your information when you use our
+          mobile application and services.
+        </p>
 
-1.1 Personal Information
-Full name
-Email address
-Phone number
-1.2 Health and Fitness Data (Sensitive Data)
-Step count data collected from device sensors
-Activity recognition data (e.g., walking, running, movement)
-Fasting and wellness tracking data
-Any health-related information you provide within the app
-1.3 Device & Usage Information
-Device type and operating system
-App usage data and interactions
-1.4 Media & Images
-Photos or images captured via camera (only with your permission)
-2. How We Use Your Information
-We use the collected information to:
+        {/* 1 */}
+        <h2 className="text-2xl font-semibold mt-10 mb-4 text-gray-900">
+          1. Information We Collect
+        </h2>
 
-Provide and maintain our services
-Track fitness activity and fasting progress
-Deliver personalized health insights and recommendations
-Enable reminders, notifications, and alerts
-Verify user identity (if applicable)
-Improve app performance and user experience
-Ensure security and prevent fraud
-3. Health and Fitness Data Usage
-We collect and process health-related data strictly to provide core app functionality.
+        <p className="mb-4">
+          When you use our application, we may collect the following types of information:
+        </p>
 
-3.1 Purpose
-Monitor physical activity and step tracking
-Provide fasting insights and health analytics
-Improve personalized wellness recommendations
-3.2 Data Sharing
-We do NOT sell, rent, or share your health data with third parties
-Health data is only processed within the app unless required by law
-Important: AI outputs may be inaccurate or incomplete. You are responsible for reviewing and validating all AI-generated content before use. We recommend not submitting sensitive personal information unless necessary for your use case.
+        <h3 className="font-semibold mt-6 mb-2 text-gray-900">
+          1.1 Personal Information
+        </h3>
+        <ul className="list-disc ml-6 space-y-2 mb-4">
+          <li>Full name</li>
+          <li>Email address</li>
+          <li>Phone number</li>
+        </ul>
 
-4. Permissions We Use
-Our app requests the following permissions:
+        <h3 className="font-semibold mt-6 mb-2 text-gray-900">
+          1.2 Health and Fitness Data (Sensitive Data)
+        </h3>
+        <ul className="list-disc ml-6 space-y-2 mb-4">
+          <li>Step count data collected from device sensors</li>
+          <li>Activity recognition data (e.g., walking, running, movement)</li>
+          <li>Fasting and wellness tracking data</li>
+          <li>Any health-related information you provide within the app</li>
+        </ul>
 
-Activity Recognition – To track steps and physical activity
-Camera – To capture images for app features
-Notifications – To send reminders and updates
-Storage (if applicable) – To save or access images
-Foreground Services – To support continuous health tracking and timers
-Permissions are requested only when required and can be revoked anytime in device settings.
+        <h3 className="font-semibold mt-6 mb-2 text-gray-900">
+          1.3 Device & Usage Information
+        </h3>
+        <ul className="list-disc ml-6 space-y-2 mb-4">
+          <li>Device type and operating system</li>
+          <li>App usage data and interactions</li>
+        </ul>
 
-5. Image and Camera Access
-With your permission, we may use your device camera to:
+        <h3 className="font-semibold mt-6 mb-2 text-gray-900">
+          1.4 Media & Images
+        </h3>
+        <ul className="list-disc ml-6 space-y-2 mb-6">
+          <li>Photos or images captured via camera (only with your permission)</li>
+        </ul>
 
-Capture images for verification or app features
-We do not share image data except:
+        {/* 2 */}
+        <h2 className="text-2xl font-semibold mt-10 mb-4 text-gray-900">
+          2. How We Use Your Information
+        </h2>
 
-When required by law
-To fulfill a service requested by you
-6. Data Sharing and Disclosure
-We may disclose your information only:
+        <ul className="list-disc ml-6 space-y-2 mb-6">
+          <li>Provide and maintain our services</li>
+          <li>Track fitness activity and fasting progress</li>
+          <li>Deliver personalized health insights and recommendations</li>
+          <li>Enable reminders, notifications, and alerts</li>
+          <li>Verify user identity (if applicable)</li>
+          <li>Improve app performance and user experience</li>
+          <li>Ensure security and prevent fraud</li>
+        </ul>
 
-When required by law or legal authorities
-To protect our legal rights
-To fulfill service requests initiated by you
-We do not sell your personal data to third parties.
+        {/* 3 */}
+        <h2 className="text-2xl font-semibold mt-10 mb-4 text-gray-900">
+          3. Health and Fitness Data Usage
+        </h2>
 
-7. Data Security
-We implement strong security measures:
+        <p className="mb-4">
+          We collect and process health-related data strictly to provide core app functionality.
+        </p>
 
-Encrypted communication (SSL/TLS)
-Secure storage of user data
-Access controls and monitoring
-Regular security updates and backups
-Security Notice: While we implement robust security measures, no method of transmission or storage is 100% secure. You acknowledge the inherent risks of providing information online and should take appropriate precautions.
+        <h3 className="font-semibold mt-6 mb-2 text-gray-900">3.1 Purpose</h3>
+        <ul className="list-disc ml-6 space-y-2 mb-4">
+          <li>Monitor physical activity and step tracking</li>
+          <li>Provide fasting insights and health analytics</li>
+          <li>Improve personalized wellness recommendations</li>
+        </ul>
 
-8. Data Retention
-We retain your data only as long as necessary to:
+        <h3 className="font-semibold mt-6 mb-2 text-gray-900">3.2 Data Sharing</h3>
+        <ul className="list-disc ml-6 space-y-2 mb-4">
+          <li>We do NOT sell, rent, or share your health data with third parties</li>
+          <li>Health data is only processed within the app unless required by law</li>
+        </ul>
 
-Provide services
-Comply with legal obligations
-9. Your Rights and Choices
-You have the right to:
+        <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-xl mb-8">
+          <p className="text-sm text-gray-800">
+            <span className="font-semibold">Important:</span> AI outputs may be inaccurate or incomplete.
+            You are responsible for reviewing and validating all AI-generated content before use.
+          </p>
+        </div>
 
-Access your personal data
-Update or correct your data
-Request deletion of your data
-Withdraw permissions at any time
-To request deletion, contact: Vitalis@virtutechsolutions.com
+        {/* 4 */}
+        <h2 className="text-2xl font-semibold mt-10 mb-4 text-gray-900">
+          4. Permissions We Use
+        </h2>
 
-10. Third-Party Links
-Our application may contain links to third-party websites or services. Please note that once you leave our app, this Privacy Policy no longer applies. We do not control and are not responsible for the privacy practices or content of third-party sites, and we encourage you to read their privacy statements before providing any personal information.
+        <ul className="list-disc ml-6 space-y-2 mb-4">
+          <li>Activity Recognition – To track steps and physical activity</li>
+          <li>Camera – To capture images for app features</li>
+          <li>Notifications – To send reminders and updates</li>
+          <li>Storage – To save or access images</li>
+          <li>Foreground Services – To support continuous tracking</li>
+        </ul>
 
-11. Children's Privacy
-Our services are not intended for use by children under the age of 13. We do not knowingly collect personal information from children. If we become aware that we have inadvertently collected personal data from a child under 13, we will take immediate steps to delete such information from our servers.
+        <p className="mb-6">
+          Permissions are requested only when required and can be revoked anytime in device settings.
+        </p>
 
-12. Changes to This Policy
-We may update our Privacy Policy from time to time to reflect changes in our practices 00 or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new policy on this page and updating the "Effective Date" at the top. We encourage you to review this policy periodically to stay informed.
+        {/* 7 SECURITY */}
+        <h2 className="text-2xl font-semibold mt-10 mb-4 text-gray-900">
+          7. Data Security
+        </h2>
 
-13. Contact Us
-If you have any questions about this Privacy Policy, contact us at:
+        <ul className="list-disc ml-6 space-y-2 mb-4">
+          <li>Encrypted communication (SSL/TLS)</li>
+          <li>Secure storage of user data</li>
+          <li>Access controls and monitoring</li>
+          <li>Regular security updates and backups</li>
+        </ul>
 
-Vitalis AI
+        <div className="bg-red-50 border border-red-200 p-4 rounded-xl mb-8">
+          <p className="text-sm text-gray-700">
+            <span className="font-semibold">Security Notice:</span> While we implement robust
+            security measures, no method of transmission is 100% secure.
+          </p>
+        </div>
+             {/* 8 */}
+<h2 className="text-2xl font-semibold mt-10 mb-4 text-gray-900">
+  8. Data Retention
+</h2>
 
-Email: Vitalis@virtutechsolutions.com
+<ul className="list-disc ml-6 space-y-2 mb-6">
+  <li>Provide services</li>
+  <li>Comply with legal obligations</li>
+</ul>
 
-For privacy-related inquiries, please include "Privacy Policy" in the subject line.</p>
+{/* 9 */}
+<h2 className="text-2xl font-semibold mt-10 mb-4 text-gray-900">
+  9. Your Rights and Choices
+</h2>
+
+<ul className="list-disc ml-6 space-y-2 mb-4">
+  <li>Access your personal data</li>
+  <li>Update or correct your data</li>
+  <li>Request deletion of your data</li>
+  <li>Withdraw permissions at any time</li>
+</ul>
+
+<p className="mb-8">
+  To request deletion:{" "}
+  <a
+    href="mailto:Vitalis@virtutechsolutions.com"
+    className="text-blue-600 underline"
+  >
+    Vitalis@virtutechsolutions.com
+  </a>
+</p>
+
+{/* 10 */}
+<h2 className="text-2xl font-semibold mt-10 mb-4 text-gray-900">
+  10. Third-Party Links
+</h2>
+
+<p className="mb-8">
+  Our application may contain links to third-party websites or services.
+  Please note that once you leave our app, this Privacy Policy no longer applies.
+  We do not control and are not responsible for the privacy practices of third-party sites.
+</p>
+
+{/* 11 */}
+<h2 className="text-2xl font-semibold mt-10 mb-4 text-gray-900">
+  11. Children's Privacy
+</h2>
+
+<p className="mb-8">
+  Our services are not intended for use by children under the age of 13.
+  We do not knowingly collect personal information from children.
+</p>
+
+{/* 12 */}
+<h2 className="text-2xl font-semibold mt-10 mb-4 text-gray-900">
+  12. Changes to This Policy
+</h2>
+
+<p className="mb-8">
+  We may update this Privacy Policy from time to time.
+  We encourage you to review this page periodically to stay informed.
+</p>
+
+{/* 13 */}
+<h2 className="text-2xl font-semibold mt-10 mb-4 text-gray-900">
+  13. Contact Us
+</h2>
+
+<p className="mb-2 font-semibold">Vitalis AI</p>
+
+<p className="mb-2">
+  Email:{" "}
+  <a
+    href="mailto:Vitalis@virtutechsolutions.com"
+    className="text-blue-600 underline"
+  >
+    Vitalis@virtutechsolutions.com
+  </a>
+</p>
+      </div>
     </div>
   );
 }
+
+     
