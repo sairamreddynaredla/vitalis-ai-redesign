@@ -47,10 +47,12 @@ export default function TermsOfService() {
           To access certain features, you must create an account by providing:
         </p>
 
-        <p className="ml-4">Accurate and complete registration information</p>
-        <p className="ml-4">A valid email address</p>
-        <p className="ml-4">A secure password meeting our security requirements</p>
-        <p className="ml-4">Any additional information required for verification</p>
+       <ul className="list-disc pl-6 space-y-2 mb-4">
+  <li>Accurate and complete registration information</li>
+  <li>A valid email address</li>
+  <li>A secure password meeting our security requirements</li>
+  <li>Any additional information required for verification</li>
+</ul>
 
         <p className="mb-4">
           You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You must immediately notify us of any unauthorized use of your account or any other breach of security.
@@ -71,13 +73,14 @@ export default function TermsOfService() {
 
         <p className="mb-4">Our Services include:</p>
 
-        <p className="ml-4">Web-based dashboard for managing AI workflows and projects</p>
-        <p className="ml-4">AI model access and integration capabilities</p>
-        <p className="ml-4">Data processing and analysis tools</p>
-        <p className="ml-4">Content generation and optimization features</p>
-        <p className="ml-4">API access for integration with third-party applications</p>
-        <p className="ml-4">Customer support and documentation</p>
-
+       <ul className="list-disc pl-6 space-y-2 mb-4">
+  <li>Web-based dashboard for managing AI workflows and projects</li>
+  <li>AI model access and integration capabilities</li>
+  <li>Data processing and analysis tools</li>
+  <li>Content generation and optimization features</li>
+  <li>API access for integration with third-party applications</li>
+  <li>Customer support and documentation</li>
+</ul>
         <p className="mb-4">
           We reserve the right to modify, suspend, or discontinue any aspect of the Services at any time, with or without notice. We may also impose limits on certain features or restrict access to parts or all of the Services without notice or liability.
         </p>
@@ -95,10 +98,12 @@ export default function TermsOfService() {
           Access to certain features of the Services requires a paid subscription. Subscription plans, pricing, and features are detailed on our pricing page and may be updated from time to time at our discretion.
         </p>
 
-        <p className="ml-4">Subscriptions automatically renew at the end of each billing period</p>
-        <p className="ml-4">You authorize us to charge your payment method on a recurring basis</p>
-        <p className="ml-4">Billing occurs in advance of each subscription period</p>
-        <p className="ml-4">All fees are non-refundable except as expressly stated in these Terms</p>
+       <ul className="list-disc pl-6 space-y-2 mb-4">
+  <li>Subscriptions automatically renew at the end of each billing period</li>
+  <li>You authorize us to charge your payment method on a recurring basis</li>
+  <li>Billing occurs in advance of each subscription period</li>
+  <li>All fees are non-refundable except as expressly stated in these Terms</li>
+</ul>
 
         <p className="font-semibold mt-4">Payment and Taxes</p>
 
@@ -125,21 +130,18 @@ export default function TermsOfService() {
         {/* 5 */}
         <h2 className="text-xl font-semibold mt-8 mb-3">5. Acceptable Use Policy</h2>
 
-        <p className="mb-4">
-          You agree to use the Services only for lawful purposes and in accordance with these Terms. You are prohibited from using the Services:
-        </p>
-
-        <p className="ml-4">To violate any applicable local, state, national, or international law or regulation</p>
-        <p className="ml-4">To transmit or procure the sending of any advertising or promotional material without our prior written consent</p>
-        <p className="ml-4">To impersonate or attempt to impersonate the Company, a Company employee, another user, or any other person or entity</p>
-        <p className="ml-4">To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Services</p>
-        <p className="ml-4">To use the Services in any manner that could disable, overburden, damage, or impair the Services</p>
-        <p className="ml-4">To use any robot, spider, or other automatic device to access the Services for any purpose without our express written permission</p>
-        <p className="ml-4">To introduce any viruses, trojan horses, worms, logic bombs, or other material that is malicious or technologically harmful</p>
-        <p className="ml-4">To attempt to gain unauthorized access to, interfere with, damage, or disrupt any parts of the Services</p>
-        <p className="ml-4">To use the Services to store, process, or transmit any content that is illegal, harmful, or violates the rights of others</p>
-        <p className="ml-4">To reverse engineer, decompile, disassemble, or otherwise attempt to discover the source code of the Services</p>
-
+        <ul className="list-disc pl-6 space-y-2 mb-4">
+  <li>To violate any applicable local, state, national, or international law or regulation</li>
+  <li>To transmit or procure the sending of any advertising or promotional material without our prior written consent</li>
+  <li>To impersonate or attempt to impersonate the Company, a Company employee, another user, or any other person or entity</li>
+  <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Services</li>
+  <li>To use the Services in any manner that could disable, overburden, damage, or impair the Services</li>
+  <li>To use any robot, spider, or other automatic device to access the Services without permission</li>
+  <li>To introduce viruses, trojan horses, worms, or harmful material</li>
+  <li>To attempt unauthorized access or disrupt Services</li>
+  <li>To use Services for illegal or harmful content</li>
+  <li>To reverse engineer or try to access source code</li>
+</ul>
         <p className="mb-6">
           We reserve the right to investigate and prosecute violations of any of the above to the fullest extent of the law. We may involve and cooperate with law enforcement authorities in prosecuting users who violate these Terms.
         </p>
@@ -164,11 +166,12 @@ export default function TermsOfService() {
 
 <p className="mb-2">You represent and warrant that:</p>
 
-<p className="ml-4">You own or have the necessary rights to submit your User Content</p>
-<p className="ml-4">Your User Content does not infringe any third-party rights</p>
-<p className="ml-4">Your User Content complies with applicable laws and these Terms</p>
-<p className="ml-4">Your User Content does not contain any confidential or proprietary information of third parties</p>
-
+<ul className="list-disc pl-6 space-y-2 mb-4">
+  <li>You own or have the necessary rights to submit your User Content</li>
+  <li>Your User Content does not infringe any third-party rights</li>
+  <li>Your User Content complies with applicable laws and these Terms</li>
+  <li>Your User Content does not contain confidential or proprietary information of third parties</li>
+</ul>
 <p className="font-semibold mt-4">Our Intellectual Property</p>
 
 <p className="mb-6">
@@ -194,18 +197,19 @@ export default function TermsOfService() {
 
 <p className="mb-2">You acknowledge and agree that:</p>
 
-<p className="ml-4">AI Outputs may be inaccurate, incomplete, biased, or inappropriate for your specific use case</p>
-<p className="ml-4">You are solely responsible for reviewing, validating, and verifying all AI Outputs before use</p>
-<p className="ml-4">You must ensure that your use of AI Outputs complies with applicable laws and regulations</p>
-<p className="ml-4">AI Outputs are not a substitute for professional judgment, advice, or expertise</p>
-<p className="ml-4">We do not guarantee the accuracy, completeness, or reliability of any AI Outputs</p>
+<ul className="list-disc pl-6 space-y-2 mb-4">
+  <li>AI Outputs may be inaccurate, incomplete, biased, or inappropriate</li>
+  <li>You are responsible for reviewing and validating outputs</li>
+  <li>You must ensure compliance with laws</li>
+  <li>AI Outputs are not a substitute for professional advice</li>
+  <li>We do not guarantee accuracy or reliability</li>
+</ul>
 
 <p className="font-semibold mt-4">Ownership of AI Outputs</p>
 
 <p className="mb-6">
   Subject to your compliance with these Terms and payment of applicable fees, you may use AI Outputs generated in response to your specific prompts for your legitimate business purposes. However, AI Outputs may not be unique and other users may receive similar outputs for similar prompts.
-</p>
-
+</p> 
 {/* 8 */}
 <h2 className="text-xl font-semibold mt-8 mb-3">
   8. Privacy and Data Protection
@@ -305,31 +309,45 @@ export default function TermsOfService() {
   Some jurisdictions do not allow the limitation or exclusion of liability for incidental or consequential damages, so the above limitation or exclusion may not apply to you.
 </p>
        
+
+
 {/* 13 */}
 <h2 className="text-xl font-semibold mt-8 mb-3">13. Indemnification</h2>
 <p className="mb-4">
   You agree to defend, indemnify, and hold harmless Vitalis AI, its affiliates, licensors, and service providers, and its and their respective officers, directors, employees, contractors, agents, licensors, suppliers, successors, and assigns from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to:
 </p>
-<p className="ml-4">Your violation of these Terms or our policies</p>
-<p className="ml-4">Your use of the Services, including any data or content transmitted or received by you</p>
-<p className="ml-4">Your violation of any rights of another party, including any users</p>
-<p className="ml-4">Your violation of any applicable laws, rules, or regulations</p>
-<p className="ml-4">Any User Content you provide</p>
-<p className="ml-4">Your willful misconduct</p>
+<ul className="list-disc pl-6 space-y-2 mb-4">
+  <li>Your violation of these Terms or our policies</li>
+  <li>Your use of the Services, including any data or content transmitted or received by you</li>
+  <li>Your violation of any rights of another party, including any users</li>
+  <li>Your violation of any applicable laws, rules, or regulations</li>
+  <li>Any User Content you provide</li>
+  <li>Your willful misconduct</li>
+</ul>
 <p className="mb-6">This indemnification obligation will survive the termination of your account and these Terms.</p>
 
 {/* 14 */}
 <h2 className="text-xl font-semibold mt-8 mb-3">14. Termination</h2>
+
 <p className="font-semibold mt-4">Termination by You</p>
-<p className="mb-4">You may terminate your account at any time by following the account closure process in your account settings or by contacting customer support. Upon termination, your right to access and use the Services will cease immediately.</p>
+<p className="mb-4">
+  You may terminate your account at any time by following the account closure process in your account settings or by contacting customer support. Upon termination, your right to access and use the Services will cease immediately.
+</p>
+
 <p className="font-semibold mt-4">Termination by Us</p>
-<p className="mb-4">We may terminate or suspend your account and access to the Services immediately, without prior notice or liability, for any reason, including without limitation if you breach these Terms, violate our policies, or engage in conduct that we determine to be harmful to other users or our business interests.</p>
+<p className="mb-4">
+  We may terminate or suspend your account and access to the Services immediately, without prior notice or liability, for any reason, including without limitation if you breach these Terms, violate our policies, or engage in conduct that we determine to be harmful to other users or our business interests.
+</p>
+
 <p className="font-semibold mt-4">Effect of Termination</p>
 <p className="mb-4">Upon termination of your account:</p>
-<p className="ml-4">Your right to access and use the Services will end immediately</p>
-<p className="ml-4">We may delete your account and all associated data</p>
-<p className="ml-4">You will remain liable for all charges incurred prior to termination</p>
-<p className="ml-4">Provisions that by their nature should survive termination will survive</p>
+
+<ul className="list-disc pl-6 space-y-2 mb-4">
+  <li>Your right to access and use the Services will end immediately</li>
+  <li>We may delete your account and all associated data</li>
+  <li>You will remain liable for all charges incurred prior to termination</li>
+  <li>Provisions that by their nature should survive termination will survive</li>
+</ul>
 
 {/* 15 */}
 <h2 className="text-xl font-semibold mt-8 mb-3">15. Dispute Resolution</h2>
