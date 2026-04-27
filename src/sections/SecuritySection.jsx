@@ -9,6 +9,13 @@ import {
   CheckCircle,
 } from "lucide-react";
 
+// ✅ SWIPER
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
 const securityData = [
   {
     icon: Lock,
@@ -97,13 +104,11 @@ export default function Security() {
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto px-4 mb-16">
 
-        {/* ✅ FIXED BADGE (LIKE FAQ) */}
         <span className="inline-block text-xs font-semibold px-4 py-1.5 rounded-full mb-4 
         bg-green-100 text-green-700">
           SECURITY FIRST
         </span>
 
-        {/* ✅ FIXED HEADING */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
           Enterprise-Grade Security at{" "}
           <span className="text-gray-900">Every Layer</span>
@@ -115,49 +120,69 @@ export default function Security() {
         </p>
       </div>
 
-      {/* Cards */}
-      <div className="max-w-6xl mx-auto px-4 grid gap-8 md:grid-cols-2">
-        {securityData.map((item, index) => {
-          const Icon = item.icon;
+      {/* ✅ CAROUSEL */}
+      <div className="max-w-6xl mx-auto px-4 pb-12">
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={1}
+          pagination={{
+            clickable: true,
+            el: ".custom-pagination"
+          }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 2 },
+          }}
+        >
+          {securityData.map((item, index) => {
+            const Icon = item.icon;
 
-          return (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition"
-            >
-              {/* Tag */}
-              <span
-                className={`text-xs font-semibold px-3 py-1 rounded-full ${item.color}`}
-              >
-                {item.tag}
-              </span>
+            return (
+              <SwiperSlide key={index}>
+                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition h-full">
 
-              {/* Title */}
-              <h3 className="text-xl font-semibold text-gray-900 mt-4">
-                {item.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm text-gray-500 mt-2 mb-5">
-                {item.desc}
-              </p>
-
-              {/* Points */}
-              <div className="space-y-3">
-                {item.points.map((point, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center justify-between bg-gray-50 border border-gray-100 rounded-lg px-4 py-2"
+                  {/* Tag */}
+                  <span
+                    className={`text-xs font-semibold px-3 py-1 rounded-full ${item.color}`}
                   >
-                    <span className="text-sm text-gray-700">{point}</span>
-                    <CheckCircle className="w-4 h-4 text-green-500" />
+                    {item.tag}
+                  </span>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-semibold text-gray-900 mt-4">
+                    {item.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm text-gray-500 mt-2 mb-5">
+                    {item.desc}
+                  </p>
+
+                  {/* Points */}
+                  <div className="space-y-3">
+                    {item.points.map((point, i) => (
+                      <div
+                        key={i}
+                        className="flex items-center justify-between bg-gray-50 border border-gray-100 rounded-lg px-4 py-2"
+                      >
+                        <span className="text-sm text-gray-700">{point}</span>
+                        <CheckCircle className="w-4 h-4 text-green-500" />
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
-          );
-        })}
+
+                </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+
+        {/* ✅ CUSTOM DOTS POSITION */}
+        <div className="custom-pagination mt-10 flex justify-center"></div>
       </div>
+
     </section>
   );
 }

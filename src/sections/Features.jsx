@@ -1,3 +1,7 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+
 import React from "react";
 import snapMeal from "../assets/snap-meal.jpg";
 import mealPlanner from "../assets/meal-planner.jpg";
@@ -82,18 +86,14 @@ export default function Features() {
       {/* HEADER */}
       <div className="text-center max-w-3xl mx-auto mb-16">
 
-        {/* Badge */}
         <p className="inline-block px-4 py-1 rounded-full bg-green-100 text-green-700 font-semibold mb-3 tracking-wide text-sm">
           FEATURES
         </p>
 
-        {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 leading-snug">
           Everything you need to{" "}
           <span className="text-black">manage</span>{" "}
-         <span className="text-black">
-  your health
-</span>
+          <span className="text-black">your health</span>
         </h2>
 
         <p className="text-gray-500 mt-4 text-lg">
@@ -101,60 +101,66 @@ export default function Features() {
         </p>
       </div>
 
-      {/* FEATURES */}
-      <div className="space-y-20">
-        {features.map((item, index) => {
-          const isReverse = index % 2 !== 0;
+      {/* ✅ CLEAN SINGLE SLIDE */}
+      <Swiper
+        modules={[Autoplay]}
+        spaceBetween={0} // no gap → no side peek
+        slidesPerView={1} // ✅ ONLY ONE CARD
+        loop={true}
+        speed={800}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+      >
+        {features.map((item, index) => (
+          <SwiperSlide key={index}>
+            <div className="w-full">
+              <div className="flex flex-col md:flex-row bg-white/60 backdrop-blur-sm rounded-3xl p-6 md:p-12 transition duration-300 hover:scale-[1.01]">
 
-          return (
-            <div
-              key={index}
-              className="flex flex-col md:flex-row ... bg-white/60 backdrop-blur-sm rounded-3xl p-6 md:p-12"
-            >
+                {/* TEXT */}
+                <div className="flex-1">
+                  <p className="text-green-600 font-semibold mb-2 text-sm">
+                    {item.tag}
+                  </p>
 
-              {/* TEXT */}
-              <div className="flex-1">
-                <p className="text-green-600 font-semibold mb-2 text-sm">
-                  {item.tag}
-                </p>
+                  <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
+                    {item.title}
+                  </h3>
 
-                <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
-                  {item.title}
-                </h3>
+                  <p className="text-gray-600 mb-6 text-lg leading-relaxed">
+                    {item.desc}
+                  </p>
 
-                <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-                  {item.desc}
-                </p>
-
-                {/* ✅ Clean bullets (no glow) */}
-                <ul className="space-y-3">
-                  {item.points.map((point, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-3 text-gray-700 text-[15px]"
-                    >
-                      <span className="mt-2 w-2 h-2 bg-green-500 rounded-full"></span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/* IMAGE */}
-              <div className="flex-1 flex justify-center">
-                <div className="w-full max-w-[480px] h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] bg-white rounded-3xl p-4 border border-gray-200 overflow-hidden flex items-center justify-center">
-                
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-contain"
-                  />
+                  <ul className="space-y-3">
+                    {item.points.map((point, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 text-gray-700 text-[15px]"
+                      >
+                        <span className="mt-2 w-2 h-2 bg-green-500 rounded-full"></span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
 
+                {/* IMAGE */}
+                <div className="flex-1 flex justify-center mt-8 md:mt-0">
+                  <div className="w-full max-w-[480px] h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] bg-white rounded-3xl p-4 border border-gray-200 overflow-hidden flex items-center justify-center">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </div>
+
+              </div>
             </div>
-          );
-        })}
-      </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
     </section>
   );
