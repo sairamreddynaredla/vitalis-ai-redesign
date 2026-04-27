@@ -3,6 +3,7 @@ import { useReveal } from './hooks/useReveal'
 import Divider from './components/Divider'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
+import ScrollToTop from "./components/ScrollToTop"; // ✅ ADDED
 
 // Sections
 import Hero from './sections/Hero'
@@ -42,6 +43,9 @@ export default function App() {
 
   return (
     <BrowserRouter>
+
+      <ScrollToTop /> {/* ✅ ADDED */}
+
       <div className="bg-background min-h-screen overflow-x-hidden">
         
         <Navbar />
