@@ -1,9 +1,5 @@
 import { motion } from "framer-motion";
 
-/**
- * Feature data for "Why Choose Us" section
- * Keeping this separate improves readability and scalability
- */
 const features = [
   {
     title: "Fast & Easy Scanning",
@@ -29,58 +25,59 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    // Section wrapper with soft gradient background
-    <section id="why-choose" className="scroll-mt-24 py-16 px-6 bg-gradient-to-b from-[#ffffff] via-[#F7F5F2] to-[#DFF5E1]">
-      
-      {/* Container */}
-      <div className="max-w-6xl mx-auto text-center">
+    <>
+      {/* ✅ TOP SEPARATION */}
+      <div className="w-full h-16 bg-[#f1f5f3]"></div>
 
-        <h2 className="text-2xl md:text-4xl font-semibold mb-3 
-bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 
-bg-clip-text text-transparent inline-block">
-  Why Vitalis AI is Different
-</h2>
-        {/* Subheading */}
-        <p className="text-gray-500 text-sm md:text-base mb-10 max-w-xl mx-auto">
-          Powerful AI tools designed for real-life health needs
-        </p>
+      <section
+        id="why-choose"
+        className="scroll-mt-24 py-24 px-6 bg-[#e8f3ec]"
+      >
+        
+        <div className="max-w-6xl mx-auto text-center">
 
-        {/* Feature Cards Grid */}
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6">
-          {features.map((item, index) => (
-            <motion.div
-              key={index}
-              // Entry animation for smooth reveal on scroll
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white/70 backdrop-blur-lg rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300"
-            >
-              
-              {/* Feature Image */}
-              <div className="rounded-lg overflow-hidden mb-4">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-40 object-cover"
-                />
-              </div>
+          <h2 className="text-2xl md:text-4xl font-semibold mb-3 
+          bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 
+          bg-clip-text text-transparent inline-block">
+            Why Vitalis AI is Different
+          </h2>
 
-              {/* Feature Title */}
-              <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-1">
-                {item.title}
-              </h3>
+          <p className="text-gray-500 text-sm md:text-base mb-12 max-w-xl mx-auto">
+            Powerful AI tools designed for real-life health needs
+          </p>
 
-              {/* Feature Description */}
-              <p className="text-xs md:text-sm text-gray-500 leading-relaxed">
-                {item.desc}
-              </p>
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6">
+            {features.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white/90 rounded-xl p-5 
+                shadow-md hover:shadow-xl transition duration-300"
+              >
+                <div className="rounded-lg overflow-hidden mb-4">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-40 object-cover"
+                  />
+                </div>
 
-            </motion.div>
-          ))}
+                <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-1">
+                  {item.title}
+                </h3>
+
+                <p className="text-xs md:text-sm text-gray-500 leading-relaxed">
+                  {item.desc}
+                </p>
+
+              </motion.div>
+            ))}
+          </div>
+
         </div>
-
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

@@ -99,8 +99,7 @@ const securityData = [
 
 export default function Security() {
   return (
-    <section className="w-full py-20 bg-[#f4f7fb]">
-      
+    <section className="w-full py-20 bg-gradient-to-b from-[#eef5f1] via-[#f8faf9] to-[#e3f2e7]">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto px-4 mb-16">
 

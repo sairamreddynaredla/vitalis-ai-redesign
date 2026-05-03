@@ -7,7 +7,7 @@ import {
   Settings,
 } from "lucide-react";
 
-// ✅ IMAGE IMPORT
+// IMAGE
 import workflowImg from "../assets/workflow-center.jpg";
 
 const steps = [
@@ -72,51 +72,57 @@ function Card({ step }) {
 
 export default function Workflow() {
   return (
-    <section className="w-full bg-white py-20">
+    <>
+      {/* MAIN SECTION */}
+      <section className="w-full bg-white py-20">
 
-      <div className="max-w-7xl mx-auto px-6 w-full">
+        <div className="max-w-7xl mx-auto px-6 w-full">
 
-        {/* HEADING */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-snug">
-            Clinical intelligence designed to simplify doctor's workflows
-          </h2>
-        </div>
-
-        {/* MOBILE */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:hidden">
-          {steps.map((step) => (
-            <Card key={step.id} step={step} />
-          ))}
-        </div>
-
-        {/* DESKTOP GRID */}
-        <div className="hidden md:grid grid-cols-3 gap-8 items-center">
-
-          {/* ROW 1 */}
-          <Card step={steps[0]} />
-
-          {/* CENTER IMAGE */}
-          <div className="flex justify-center">
-            <div className="w-40 h-40 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center">
-              <img
-                src={workflowImg}
-                alt="workflow"
-                className="w-28 h-28 object-contain"
-              />
-            </div>
+          {/* HEADING */}
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-snug">
+              Clinical intelligence designed to simplify doctor's workflows
+            </h2>
           </div>
 
-          <Card step={steps[1]} />
+          {/* MOBILE */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:hidden">
+            {steps.map((step) => (
+              <Card key={step.id} step={step} />
+            ))}
+          </div>
 
-          {/* ROW 2 */}
-          <Card step={steps[2]} />
-          <Card step={steps[4]} />
-          <Card step={steps[3]} />
+          {/* DESKTOP GRID */}
+          <div className="hidden md:grid grid-cols-3 gap-8 items-center">
+
+            {/* ROW 1 */}
+            <Card step={steps[0]} />
+
+            {/* CENTER IMAGE */}
+            <div className="flex justify-center">
+              <div className="w-40 h-40 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center">
+                <img
+                  src={workflowImg}
+                  alt="workflow"
+                  className="w-28 h-28 object-contain"
+                />
+              </div>
+            </div>
+
+            <Card step={steps[1]} />
+
+            {/* ROW 2 */}
+            <Card step={steps[2]} />
+            <Card step={steps[4]} />
+            <Card step={steps[3]} />
+
+          </div>
 
         </div>
+      </section>
 
-      </div>
-    </section>
+      {/* 🔥 BOTTOM SEPARATOR (MAIN FIX) */}
+      <div className="w-full h-16 bg-[#f1f5f3]"></div>
+    </>
   );
 }

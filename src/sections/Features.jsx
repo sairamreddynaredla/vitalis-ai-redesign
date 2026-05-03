@@ -3,13 +3,12 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 import React from "react";
-import snapMeal from "../assets/snap-meal.jpg";
-import mealPlanner from "../assets/meal-planner.jpg";
-import grocery from "../assets/ai-grocery-scanner.jpg";
-import expiry from "../assets/Food-quality-risk-scanner.jpg";
-import menu from "../assets/ai-menu-analyser.jpg";
-import fasting from "../assets/fasting2.jpg";
-
+import snapMeal from "../assets/snap-meal-new.jpg";
+import mealPlanner from "../assets/meal-planner-new.jpg";
+import grocery from "../assets/grocery-new.jpg";
+import expiry from "../assets/risk-new.jpg";
+import menu from "../assets/menu-new.jpg";
+import fasting from "../assets/fasting-new.jpg";
 const features = [
   {
     tag: "Scan 🍽️",
