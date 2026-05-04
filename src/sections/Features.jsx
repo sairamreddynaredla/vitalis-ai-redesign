@@ -9,6 +9,7 @@ import grocery from "../assets/grocery-new.jpg";
 import expiry from "../assets/risk-new.jpg";
 import menu from "../assets/menu-new.jpg";
 import fasting from "../assets/fasting-new.jpg";
+
 const features = [
   {
     tag: "Scan 🍽️",
@@ -80,11 +81,10 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 px-4 md:px-10 bg-[#f6f8f6]">
+    <section id="features" className="py-32 px-4 md:px-10 bg-[#eef7f2]">
 
       {/* HEADER */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
-
+      <div className="text-center max-w-3xl mx-auto mb-20">
         <p className="inline-block px-4 py-1 rounded-full bg-green-100 text-green-700 font-semibold mb-3 tracking-wide text-sm">
           FEATURES
         </p>
@@ -100,11 +100,10 @@ export default function Features() {
         </p>
       </div>
 
-      {/* ✅ CLEAN SINGLE SLIDE */}
+      {/* SLIDER */}
       <Swiper
         modules={[Autoplay]}
-        spaceBetween={0} // no gap → no side peek
-        slidesPerView={1} // ✅ ONLY ONE CARD
+        slidesPerView={1}
         loop={true}
         speed={800}
         autoplay={{
@@ -114,8 +113,8 @@ export default function Features() {
       >
         {features.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="w-full">
-              <div className="flex flex-col md:flex-row bg-white/60 backdrop-blur-sm rounded-3xl p-6 md:p-12 transition duration-300 hover:scale-[1.01]">
+            <div className="max-w-6xl mx-auto">
+              <div className="flex flex-col md:flex-row items-center gap-12">
 
                 {/* TEXT */}
                 <div className="flex-1">
@@ -144,9 +143,9 @@ export default function Features() {
                   </ul>
                 </div>
 
-                {/* IMAGE */}
-                <div className="flex-1 flex justify-center mt-8 md:mt-0">
-                  <div className="w-full max-w-[480px] h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] bg-white rounded-3xl p-4 border border-gray-200 overflow-hidden flex items-center justify-center">
+                {/* IMAGE (NO CUT + PERFECT FIT) */}
+                <div className="flex-1 flex justify-center">
+                  <div className="w-full max-w-[520px] aspect-[4/3] flex items-center justify-center">
                     <img
                       src={item.image}
                       alt={item.title}

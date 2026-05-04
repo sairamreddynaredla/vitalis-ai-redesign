@@ -7,7 +7,6 @@ import {
   Settings,
 } from "lucide-react";
 
-// IMAGE
 import workflowImg from "../assets/workflow-center.jpg";
 
 const steps = [
@@ -43,25 +42,27 @@ const steps = [
   },
 ];
 
-// CARD
 function Card({ step }) {
   const Icon = step.icon;
 
   return (
-    <div className="w-full bg-white border border-gray-200 p-6 rounded-2xl 
-    shadow-md hover:shadow-lg transition-all duration-300">
-
-      <div className="flex items-start gap-4">
-        <div className="w-11 h-11 flex items-center justify-center rounded-lg 
-        bg-emerald-50 text-emerald-600 border border-emerald-100">
-          <Icon size={22} />
+    <div
+      className="w-full bg-white border border-gray-200 p-5 rounded-2xl 
+      shadow-sm hover:shadow-md transition-all duration-300"
+    >
+      <div className="flex items-start gap-3">
+        <div
+          className="w-10 h-10 flex items-center justify-center rounded-lg 
+          bg-emerald-50 text-emerald-600 border border-emerald-100"
+        >
+          <Icon size={20} />
         </div>
 
         <div>
-          <h3 className="text-base font-semibold text-gray-900 mb-2">
+          <h3 className="text-sm font-semibold text-gray-900 mb-1">
             {step.title}
           </h3>
-          <p className="text-sm text-gray-600 leading-relaxed">
+          <p className="text-xs text-gray-600 leading-relaxed">
             {step.desc}
           </p>
         </div>
@@ -72,57 +73,56 @@ function Card({ step }) {
 
 export default function Workflow() {
   return (
-    <>
-      {/* MAIN SECTION */}
-      <section className="w-full bg-white py-20">
+    <section className="relative w-full py-32 bg-[#eef7f2]">
 
-        <div className="max-w-7xl mx-auto px-6 w-full">
+      {/* 🔥 TOP GRADIENT SEPARATION */}
+      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent"></div>
 
-          {/* HEADING */}
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-snug">
-              Clinical intelligence designed to simplify doctor's workflows
-            </h2>
-          </div>
+      <div className="max-w-7xl mx-auto px-6 w-full relative">
 
-          {/* MOBILE */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:hidden">
-            {steps.map((step) => (
-              <Card key={step.id} step={step} />
-            ))}
-          </div>
+        {/* HEADING */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-snug">
+            Clinical intelligence designed to simplify doctor's workflows
+          </h2>
+        </div>
 
-          {/* DESKTOP GRID */}
-          <div className="hidden md:grid grid-cols-3 gap-8 items-center">
+        {/* MOBILE */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:hidden">
+          {steps.map((step) => (
+            <Card key={step.id} step={step} />
+          ))}
+        </div>
 
-            {/* ROW 1 */}
-            <Card step={steps[0]} />
+        {/* DESKTOP */}
+        <div className="hidden md:grid grid-cols-3 gap-8 items-center">
 
-            {/* CENTER IMAGE */}
-            <div className="flex justify-center">
-              <div className="w-40 h-40 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center">
-                <img
-                  src={workflowImg}
-                  alt="workflow"
-                  className="w-28 h-28 object-contain"
-                />
-              </div>
+          {/* ROW 1 */}
+          <Card step={steps[0]} />
+
+          {/* CENTER IMAGE */}
+          <div className="flex justify-center shrink-0">
+            <div
+              className="w-64 h-64 rounded-full bg-white border border-gray-200 
+              shadow-xl flex items-center justify-center"
+            >
+              <img
+                src={workflowImg}
+                alt="workflow"
+                className="w-44 h-44 object-contain"
+              />
             </div>
-
-            <Card step={steps[1]} />
-
-            {/* ROW 2 */}
-            <Card step={steps[2]} />
-            <Card step={steps[4]} />
-            <Card step={steps[3]} />
-
           </div>
+
+          <Card step={steps[1]} />
+
+          {/* ROW 2 */}
+          <Card step={steps[2]} />
+          <Card step={steps[4]} />
+          <Card step={steps[3]} />
 
         </div>
-      </section>
-
-      {/* 🔥 BOTTOM SEPARATOR (MAIN FIX) */}
-      <div className="w-full h-16 bg-[#f1f5f3]"></div>
-    </>
+      </div>
+    </section>
   );
 }
